@@ -200,6 +200,10 @@ table {
 
 /*---------Content-----------*/
 
+.content-l {
+	height: 55px;
+}
+
 .content-left {
   position: relative;
   float: left;
