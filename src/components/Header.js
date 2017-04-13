@@ -40,7 +40,7 @@ const Header = () => {
       </div>
       <div className="nav__sub-container">
         <div className="nav__sub-header">
-          Nýjustu panntanir
+          Nýjustu pantanir
         </div>
         <div className="nav__sub-icon">
         </div>

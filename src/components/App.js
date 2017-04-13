@@ -11,9 +11,7 @@ export default class App extends Component {
         </div>
         <div className="content">
           <Content />
-          <div className="content-left">
             {this.props.children}
-          </div>
         </div>
       </div>
     );

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import Kitchen from './Kitchen';
+import Complete from './Complete';
 import OrderDetail from './OrderDetail';
 import OrderData from '../OrderArr';
 
-class KitchenOrders extends Component {
+class CompleteOrders extends Component {
 
   state = {
     orders: [],
@@ -14,9 +14,9 @@ class KitchenOrders extends Component {
   renderOrder() {
     console.log(this.state.selectedOrders);
     let OrderNodes = OrderData.map( (orders, i) => {
-        if(orders.food != "" && orders.status != "3") {
+        if(orders.status == "3") {
          return (
-           <Kitchen
+           <Complete
              key={i}
              orders={orders}
              onOrdersSelect={selectedOrders =>  {this.setState({ selectedOrders })}} />
@@ -38,8 +38,8 @@ class KitchenOrders extends Component {
             <div className="orders">{this.renderOrder()}</div>
           </div>
         </div>
-          );
+      );
     }
 }
 
-export default KitchenOrders;
+export default CompleteOrders;

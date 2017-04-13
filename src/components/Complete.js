@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from './Button'
+import Button from './button'
 
-const Waiter = ({ orders, onOrdersSelect }) => {
+const Complete = ({ orders, onOrdersSelect }) => {
   const { order_number, drinks, table_number, status } = orders;
   return (
     <div onClick={() => onOrdersSelect(orders)} className="orders__container">
@@ -21,4 +21,4 @@ const Waiter = ({ orders, onOrdersSelect }) => {
   );
 };
 
-export default Waiter;
+export default Complete;
