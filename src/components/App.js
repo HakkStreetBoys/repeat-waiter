@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header'
 import Content from './Content'
-import Login from "./Login";
 
 import firebase from "./firebase";
 
