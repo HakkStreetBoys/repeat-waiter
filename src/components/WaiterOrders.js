@@ -5,7 +5,6 @@ import OrderData from '../OrderArr';
 import OrderDetail from './OrderDetail';
 import _ from 'lodash';
 import firebase from './firebase';
-import userRefFor from './userRef';
 
 class WaiterOrders extends Component {
   state = {
@@ -33,7 +32,7 @@ class WaiterOrders extends Component {
     );
   }
 
-  }
+
 
   render() {
       return (
@@ -45,7 +44,7 @@ class WaiterOrders extends Component {
             <div className="orders">{this.renderOrder()}</div>
           </div>
         </div>
-          );
+      );
     }
 
 }
