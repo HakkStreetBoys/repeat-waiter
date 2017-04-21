@@ -1,10 +1,29 @@
 import React from 'react';
 import Button from './Button'
+import PaymentStatus from './PaymentStatus'
 
-const Table = ({ orders, onOrdersSelect }) => {
-  const { order_number, drinks, table_number, status } = orders;
+const getStatus = (status_drink) => {
+  console.log( "inGetStatus ", status_drink );
+}
+
+const getStatusPay = (status_pay) => {
+  console.log( "inGetStatus ", status_pay );
+}
+
+let checkOld = {};
+checkOld.className = '';
+
+const Table = ({ orders, onOrdersSelect, active }) => {
+  const { order_number, drinks, table_number, status_drink, status_food, status_pay } = orders;
   return (
-    <div onClick={() => onOrdersSelect(orders)} className="orders__container">
+    <div onClick={ event =>
+      {event.target.className = event.target.className ===
+        "orders__button-container"?"orders__button-container orders__container-clicked":"orders__button-container";
+        checkOld.className = "orders__button-container";
+        checkOld = event.target;
+        return onOrdersSelect(orders)
+      } } className="orders__container">
+
       <div className="orders__item">
         <div className="orders__stripe"></div>
         <div className="orders__table_number">
@@ -13,8 +32,15 @@ const Table = ({ orders, onOrdersSelect }) => {
         <div className="orders__order">
           {drinks}
         </div>
-        <div className="orders__button-container">
-          <Button status={status} className="button" />
+        <div className="float-right">
+          <div className="orders__button-container">
+            <div className="float-left">
+              <Button status_drink={status_drink} getStatus={getStatus} />
+            </div>
+          </div>
+          <div className="orders__payment-container">
+            <PaymentStatus status_pay={status_pay} getStatusPay={getStatus} />
+          </div>
         </div>
       </div>
     </div>

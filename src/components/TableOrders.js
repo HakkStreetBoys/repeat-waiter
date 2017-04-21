@@ -7,51 +7,44 @@ import OrderDetail from './OrderDetail';
 class TableOrders extends Component {
   state = {
     orders: [],
-    selectedOrders: null,
+    selectedOrders: OrderData[0],
+    isActive: '',
   }
 
-  // OrderingTable() {
-  //
-  // let ACDOrdering = OrderData.map(function (orders, i) {
-  //     if(this.orders.table_number == orders.table_number) {
-  //      return (
-  //       <div className="epic">
-  //         <Table
-  //           key={i}
-  //           orders={orders}
-  //           onOrdersSelect={selectedOrders => this.setState({ selectedOrders })} />
-  //       </div>
-  //          );
-  //          }
-  //          });
-  // }
-
   renderOrder() {
-    console.log(this.state.selectedOrders);
-    let OrderNodes = OrderData.map(function (orders, i) {
-        if(orders.drinks != "" && orders.status != "3") {
-         return (
+    let OrderNodes = OrderData.map( (orders, i) => {
+      if(orders.food != "" || orders.drink != "") {
+        return (
            <Table
              key={i}
              orders={orders}
-             onOrdersSelect={selectedOrders => this.setState({ selectedOrders })} />
+             status={orders.status}
+             onOrdersSelect={selectedOrders =>
+               {this.setState({ selectedOrders: selectedOrders, isActive: 'orders__container-clicked' })}}
+             active={this.state.isActive}
+           />
+        );
+      }
+    });
 
-             );
-             }
-             });
-      return (
-        OrderNodes
-      );
-    }
+    const sorting = OrderNodes.sort((a, b) => {
+      return parseFloat(a.props.orders.table_number) - parseFloat(b.props.orders.table_number);
+    });
+
+    return (
+        sorting
+    );
+  }
 
   render() {
     return (
       <div className="gag">
-        {/* <WaiterDetail
+        <OrderDetail
           orders={this.state.selectedOrders}
-          // onOrdersRemove={selectedOrders => this.setState({ selectedOrders: null })}
-        /> */}
-        <div className="orders">{this.renderOrder()}</div>
+        />
+        <div className="content-left">
+          <div className="orders">{this.renderOrder()}</div>
+        </div>
       </div>
         );
   }
