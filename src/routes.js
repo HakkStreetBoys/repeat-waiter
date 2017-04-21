@@ -8,11 +8,6 @@ import CompleteOrders from './components/CompleteOrders';
 import TableOrders from './components/TableOrders';
 import OrderData from './OrderArr';
 
-const Greeting = () => {
-  return <div>Hey there!!!!</div>
-};
-
-
 export default (
 <Route path="/" component={App}>
   <IndexRoute component={WaiterOrders} />

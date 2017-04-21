@@ -16,7 +16,7 @@ const OrderDetail = ({ orders }) => {
               Símanúmer:
             </div>
             <div className="single-content__phone-number">
-              667-9823
+              {orders.phone_number}
             </div>
           </div>
         </div>

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import OrderData from '../OrderArr';
 
 class Button extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      status : 1,
+      status : this.props.status_drink,
     }
   }
 
@@ -21,10 +22,12 @@ class Button extends Component {
   }
 
   onClick() {
-      console.log(this.state.status);
-  const temp = this.state.status;
-console.log(temp);
-      this.setState({ status : temp %3+1 });
+    let temp = this.state.status;
+    if(temp < 3) {
+      temp = temp %3+1;
+    }
+    this.setState({ status : temp });
+    this.props.getStatus(temp);
   }
 
 

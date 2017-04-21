@@ -55,7 +55,7 @@ table {
 .button {
 	display: inline-block;
 	position: relative;
-	float: right;
+
 	margin: 17.5px 40px 0 0;
 	border: none;
   font-family: RoundLight;
@@ -73,9 +73,18 @@ table {
 	background-color: #f1c014;
 }
 
-.clicked {
-	background-color: red;
+.complete {
+	background-color: #5a9251;
 }
+
+.float-left {
+	float: left;
+}
+
+/*.float-right {
+	float: right;
+}*/
+
 /*---------Fonts-----------*/
 
 @font-face {
@@ -272,6 +281,10 @@ table {
 	cursor: pointer;
 }
 
+.orders__container-clicked {
+	background-color: gray;
+}
+
 .orders__stripe {
   display: inline-block;
   position: relative;
@@ -279,17 +292,19 @@ table {
   height: 54px;
   width: 6px;
   background-color: #1491f1;
+	float: left;
+	margin: 0;
 }
 
 .orders__table_number,
 .orders__order {
   position: relative;
   float: left;
+	white-space: nowrap;
 }
 
 .orders__table_number {
-  width: 120px;
-  text-align: center;
+  text-align: left;
 }
 
 .orders__button-container {
@@ -303,6 +318,15 @@ table {
   margin: 17.5px 100px 0 0;
 }
 
+.orders__payment-container {
+	position: relative;
+	white-space: nowrap;
+	margin-right: 20px;
+}
+
+.payment-status__img {
+	margin: 0 0 5px 10px;
+}
 /*-----------Single Content-----------*/
 
 .gag {
@@ -353,10 +377,6 @@ table {
 	font-family: RoundLight;
 }
 
-.single-content__phone {
-	padding-top: 60px;
-}
-
 .single-content__table {
 	position: relative;
 	float: right;
@@ -366,7 +386,7 @@ table {
 .single-content__order {
 	position: absolute;
 	float: left;
-	margin-top: 150px;
+	margin-top: 80px;
 	padding-left: 20px;
-	width: 50%;
+	width: 100%;
 }

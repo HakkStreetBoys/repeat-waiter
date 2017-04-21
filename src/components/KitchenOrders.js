@@ -8,18 +8,22 @@ class KitchenOrders extends Component {
 
   state = {
     orders: [],
-    selectedOrders: null,
+    selectedOrders: OrderData[0],
+    isActive: '',
   }
 
   renderOrder() {
-    console.log(this.state.selectedOrders);
     let OrderNodes = OrderData.map( (orders, i) => {
-        if(orders.food != "" && orders.status != "3") {
+        if(orders.food != "" && orders.status_food != "3") {
          return (
            <Kitchen
              key={i}
              orders={orders}
-             onOrdersSelect={selectedOrders =>  {this.setState({ selectedOrders })}} />
+             status={status}
+             onOrdersSelect={selectedOrders =>
+               {this.setState({ selectedOrders: selectedOrders, isActive: 'orders__container-clicked' })}}
+             active={this.state.isActive}
+           />
           );
         }
       });

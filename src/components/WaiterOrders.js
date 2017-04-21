@@ -7,28 +7,35 @@ import OrderDetail from './OrderDetail';
 class WaiterOrders extends Component {
   state = {
     orders: [],
-    selectedOrders: null,
+    selectedOrders: OrderData[0],
+    isActive: '',
+  }
+
+  isActive(){
+    return ((this.state.selected) ?'active':'default');
   }
 
   renderOrder() {
-    console.log(this.state.selectedOrders);
     let OrderNodes = OrderData.map( (orders, i) => {
-        if(orders.drinks != "" && orders.status != "3") {
-         return (
-           <Waiter
-             key={i}
-             orders={orders}
-             onOrdersSelect={selectedOrders =>  {this.setState({ selectedOrders })}} />
-
-             );
-             }
-            });
-      return (
-        OrderNodes
-      );
-    }
+      if(orders.drinks != "" && orders.status_drink != "3") {
+        return (
+         <Waiter
+           key={i}
+           orders={orders}
+           onOrdersSelect={selectedOrders =>
+             {this.setState({ selectedOrders: selectedOrders, isActive: 'orders__container-clicked' })}}
+           active={this.state.isActive}
+         />
+        );
+      }
+    });
+    return (
+      OrderNodes
+    );
+  }
 
   render() {
+    console.log(this.state);
     return (
       <div className="gag">
         <OrderDetail
