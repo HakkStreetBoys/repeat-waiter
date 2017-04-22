@@ -13,15 +13,15 @@ const getStatusPay = (status_pay) => {
 let checkOld = {};
 checkOld.className = '';
 
-const Table = ({ orders, onOrdersSelect, active }) => {
-  const { order_number, drinks, table_number, status_drink, status_food, status_pay } = orders;
+const Table = ({ theOrder, onOrdersSelect, active }) => {
+  const { order_number, title, table_number, status_drink, status_food, status_pay } = theOrder;
   return (
     <div onClick={ event =>
       {event.target.className = event.target.className ===
         "orders__button-container"?"orders__button-container orders__container-clicked":"orders__button-container";
         checkOld.className = "orders__button-container";
         checkOld = event.target;
-        return onOrdersSelect(orders)
+        return onOrdersSelect(theOrder)
       } } className="orders__container">
 
       <div className="orders__item">
@@ -30,7 +30,7 @@ const Table = ({ orders, onOrdersSelect, active }) => {
           {table_number}
         </div>
         <div className="orders__order">
-          {drinks}
+          {title}
         </div>
         <div className="float-right">
           <div className="orders__button-container">

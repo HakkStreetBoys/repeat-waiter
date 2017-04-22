@@ -1,9 +1,8 @@
 import React from 'react';
-// import axios from 'axios';
 
-const OrderDetail = ({ orders }) => {
+const OrderDetail = ({ theOrder }) => {
 
-  if(!orders) {
+  if(!theOrder) {
     return <span className="fleh"></span>;
   }
 
@@ -16,7 +15,7 @@ const OrderDetail = ({ orders }) => {
               Símanúmer:
             </div>
             <div className="single-content__phone-number">
-              {orders.phone_number}
+              {'+' + theOrder.userID}
             </div>
           </div>
         </div>
@@ -25,7 +24,7 @@ const OrderDetail = ({ orders }) => {
             Borð Númer:
           </div>
           <div className="single-content__table-number">
-            #{orders.table_number}
+            #{theOrder.table_number}
           </div>
         </div>
         <div className="single-content__order">
@@ -33,10 +32,15 @@ const OrderDetail = ({ orders }) => {
             Pöntun:
           </div>
           <div className="single-content__drinks">
-            {orders.drinks}
+            {theOrder.title}
           </div>
-          <div className="single-content__food">
-            {orders.food}
+        </div>
+        <div className="single-content__price">
+          <div className="single-content__price-title">
+            Verð samtals:
+          </div>
+          <div className="single-content__price-output">
+            {theOrder.price}
           </div>
         </div>
       </div>

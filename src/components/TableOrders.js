@@ -1,53 +1,70 @@
 import React, { Component } from 'react';
 
 import Table from './Table';
-import OrderData from '../OrderArr';
 import OrderDetail from './OrderDetail';
+import _ from 'lodash';
+import firebase from './firebase';
 
 class TableOrders extends Component {
   state = {
-    orders: [],
-    selectedOrders: OrderData[0],
+    order: [],
+    selectedOrders: null,
     isActive: '',
+    myOrders: [],
+    loading: true,
   }
 
-  renderOrder() {
-    let OrderNodes = OrderData.map( (orders, i) => {
-      if(orders.food != "" || orders.drink != "") {
-        return (
-           <Table
-             key={i}
-             orders={orders}
-             status={orders.status}
-             onOrdersSelect={selectedOrders =>
-               {this.setState({ selectedOrders: selectedOrders, isActive: 'orders__container-clicked' })}}
-             active={this.state.isActive}
-           />
-        );
+  componentWillMount() {
+
+    var component = this;
+
+    firebase.database().ref("users").on('value', (snapshot) => {
+      console.log(snapshot.val())
+        this.setState({ myOrders: snapshot.val(), loading: false });
+    });
+  }
+
+  renderOrder = () => {
+
+    return _.map(this.state.myOrders, (user, key, key1) => {
+      // console.log(myOrder);
+      if(user.confirmed_order) {
+        return _.map(user.confirmed_order, (Order, key, key1) => {
+          return _.map(Order, (theOrder, key, key1)=> {
+
+          return (
+                <Table
+                  key={key}
+                  key1={key1}
+                  theOrder={theOrder}
+                  onOrdersSelect={selectedOrders =>
+                    {this.setState({ selectedOrders: selectedOrders, isActive: 'orders__container-clicked' })}}
+                  active={this.state.isActive}
+                />
+              );
+
+              });
+        })
       }
     });
-
-    const sorting = OrderNodes.sort((a, b) => {
-      return parseFloat(a.props.orders.table_number) - parseFloat(b.props.orders.table_number);
-    });
-
-    return (
-        sorting
-    );
   }
-
   render() {
-    return (
-      <div className="gag">
-        <OrderDetail
-          orders={this.state.selectedOrders}
-        />
-        <div className="content-left">
-          <div className="orders">{this.renderOrder()}</div>
-        </div>
-      </div>
-        );
-  }
+    const { state } = this;
+      return (
+        <div className="gag">
+          <OrderDetail
+            theOrder={this.state.selectedOrders}
+          />
+          <div className="content-left">
+            <div className="orders">
+              <ul>
+                {this.renderOrder()}
+              </ul>
+            </div>
+          </div>
+          </div>
+      );
+    }
 }
 
 export default TableOrders;

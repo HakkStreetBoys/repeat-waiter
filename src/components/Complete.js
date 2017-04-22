@@ -1,36 +1,39 @@
-import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import Button from './Button'
-import PaymentStatus from './PaymentStatus'
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import Button from "./Button";
+import PaymentStatus from "./PaymentStatus";
 
-const getStatus = (status_drink) => {
-  console.log( "inGetStatus ", status_drink );
-}
+const getStatus = status_drink => {
+  console.log("inGetStatus ", status_drink);
+};
 
-const getStatusPay = (status_pay) => {
-  console.log( "inGetStatus ", status_drink );
-}
+const getStatusPay = status_pay => {
+  console.log("inGetStatus ", status_drink);
+};
 
 let checkOld = {};
-checkOld.className = '';
+checkOld.className = "";
 
-const Complete = ({ orders, onOrdersSelect, active }) => {
-  const { order_number, drinks, table_number, status_food, status_pay } = orders;
+const Complete = ({ theOrder, onOrdersSelect, active }) => {
+  const { title, table_number, status_food, status_pay } = theOrder;
   return (
-    <div onClick={ event =>
-      {event.target.className = event.target.className ===
-        "orders__button-container"?"orders__button-container orders__container-clicked":"orders__button-container";
+    <div
+      onClick={event => {
+        event.target.className = event.target.className ===
+          "orders__button-container"
+          ? "orders__button-container orders__container-clicked"
+          : "orders__button-container";
         checkOld.className = "orders__button-container";
         checkOld = event.target;
-        return onOrdersSelect(orders)
-      } }
-      className="orders__container">
+        return onOrdersSelect(theOrder);
+      }}
+      className="orders__container"
+    >
       <Container>
         <Row>
           <div className="orders__item">
-
-            <Col md={{ size: 0, push: 2}}>
-              <div className="orders__stripe"></div>
+            <Col md={{ size: 0, push: 2 }}>
+              <div className="orders__stripe" />
             </Col>
             <Col md="1">
               <div className="orders__table_number">
@@ -39,7 +42,7 @@ const Complete = ({ orders, onOrdersSelect, active }) => {
             </Col>
             <Col md="3">
               <div className="orders__order">
-                {drinks}
+                {title}
               </div>
             </Col>
             <div className="orders__button-container">
@@ -49,10 +52,12 @@ const Complete = ({ orders, onOrdersSelect, active }) => {
             </div>
             <Col md="4">
               <div className="orders__payment-container">
-                <PaymentStatus status_pay={status_pay} getStatusPay={getStatus} />
+                <PaymentStatus
+                  status_pay={status_pay}
+                  getStatusPay={getStatus}
+                />
               </div>
             </Col>
-
           </div>
         </Row>
       </Container>
