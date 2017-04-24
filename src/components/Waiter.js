@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Row, Col } from "reactstrap";
 import Button from './Button'
 
 const getStatus = (status_drink) => {
@@ -11,26 +12,47 @@ checkOld.className = '';
 const Waiter = ({ theOrder, onOrdersSelect, active }) => {
   const { title, table_number, status_drink } = theOrder;
   return (
-    <div onClick={ event =>
-      {event.target.className = event.target.className ===
-        "orders__button-container"?"orders__button-container orders__container-clicked":"orders__button-container";
-        checkOld.className = "orders__button-container";
-        checkOld = event.target;
-        return onOrdersSelect(theOrder)
-      } } className="orders__container">
+    <div
+      onClick={(event, k) =>
+        { console.log(k);
+          const activeOrders = document.querySelectorAll("[data-reactid='"+k+"']")[0];
+          console.log(activeOrders);
+          activeOrders.className = activeOrders.className ===
+          "orders__container"
+          ? "orders__container orders__container-clicked"
+          : "orders__container";
+          checkOld.className = "orders__container";
+          checkOld = activeOrders;
+          return onOrdersSelect(theOrder);
+        }}
+      className="orders__container">
 
-      <div className="orders__item">
-        <div className="orders__stripe"></div>
-        <div className="orders__table_number">
-          {table_number}
-        </div>
-        <div className="orders__order">
-          {title}
-        </div>
-        <div className="orders__button-container">
-          <Button status_drink={status_drink} getStatus={getStatus} className="button" />
-        </div>
-      </div>
+      <Container>
+        <Row>
+          <div className="orders__item">
+            <Col md={{ size: 0, push: 2 }}>
+              <div className="orders__stripe" />
+            </Col>
+            <Col md="2">
+              <div className="orders__table_number">
+                {table_number}
+              </div>
+            </Col>
+            <Col md="3">
+              <div className="orders__order">
+                {title}
+              </div>
+            </Col>
+            <Col md="3">
+            </Col>
+            <Col md={{ size: 3, push: 2 }} lg={{ size: 3, push: 2 }}>
+              <div className="orders__button-container">
+                <Button status_drink={status_drink} getStatus={getStatus} />
+              </div>
+            </Col>
+          </div>
+        </Row>
+      </Container>
     </div>
   );
 };

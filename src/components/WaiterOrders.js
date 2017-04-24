@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Waiter from './Waiter';
 import OrderDetail from './OrderDetail';
+import Spinner from './Spinner'
 import _ from 'lodash';
 import firebase from './firebase';
 
@@ -17,7 +18,6 @@ class WaiterOrders extends Component {
   componentWillMount() {
 
     var component = this;
-
     firebase.database().ref("users").on('value', (snapshot) => {
       console.log(snapshot.val())
         this.setState({ myOrders: snapshot.val(), loading: false });
@@ -25,11 +25,33 @@ class WaiterOrders extends Component {
   }
 
   renderOrder = () => {
+    const { myOrders } = this.state;
+    //
+    // let orders = {};
+    //
+    console.log("what is myOrders",myOrders)
+
+    const numbers = [];
+    const orders = [];
+
+    for(let number in myOrders){
+      const user = myOrders[number];
+      const confirmedOrders = user ? user.confirmed_order : undefined;
+
+      console.log("confirmedOrders",confirmedOrders)
+      if(confirmedOrders){
+        for(let order in confirmedOrders){
+          orders.push(confirmedOrders[order])
+        }
+      }
+    }
+
+    console.log("what is orders",orders)
 
     return _.map(this.state.myOrders, (user, key, key1) => {
-      // console.log(myOrder);
       if(user.confirmed_order) {
         return _.map(user.confirmed_order, (Order, key, key1) => {
+
           return _.map(Order, (theOrder, key, key1)=> {
             if(theOrder.category == "drykkur" && theOrder.status_drink != "2") {
 
@@ -51,7 +73,11 @@ class WaiterOrders extends Component {
     });
   }
   render() {
+    console.log(this.state);
     const { state } = this;
+    if(this.state.loading == true) {
+      return <Spinner />
+    }
       return (
         <div className="gag">
           <OrderDetail

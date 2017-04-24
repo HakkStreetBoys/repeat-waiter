@@ -81,10 +81,6 @@ table {
 	float: left;
 }
 
-/*.float-right {
-	float: right;
-}*/
-
 /*---------Fonts-----------*/
 
 @font-face {
@@ -101,6 +97,39 @@ table {
   url('../src/fonts/din-round/din-round-bold.woff') format('woff'),
   url('../src/fonts/din-round/din-round-bold.ttf')  format('truetype');
   font-weight: 800;
+}
+
+/*---------Spinner-----------*/
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner img:nth-child(1) {
+  animation: .85s linear infinite rotate;
+  animation-delay: .45s;
+}
+
+.spinner img:nth-child(2) {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
 }
 
 /*---------Header-----------*/

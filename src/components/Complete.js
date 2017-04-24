@@ -18,15 +18,18 @@ const Complete = ({ theOrder, onOrdersSelect, active }) => {
   const { title, table_number, status_food, status_pay } = theOrder;
   return (
     <div
-      onClick={event => {
-        event.target.className = event.target.className ===
-          "orders__button-container"
-          ? "orders__button-container orders__container-clicked"
-          : "orders__button-container";
-        checkOld.className = "orders__button-container";
-        checkOld = event.target;
-        return onOrdersSelect(theOrder);
-      }}
+      onClick={(event, k) =>
+        { console.log(k);
+          const activeOrders = document.querySelectorAll("[data-reactid='"+k+"']")[0];
+          console.log(activeOrders);
+          activeOrders.className = activeOrders.className ===
+          "orders__container"
+          ? "orders__container orders__container-clicked"
+          : "orders__container";
+          checkOld.className = "orders__container";
+          checkOld = activeOrders;
+          return onOrdersSelect(theOrder);
+        }}
       className="orders__container"
     >
       <Container>
