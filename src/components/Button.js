@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import OrderData from '../OrderArr';
 
 class Button extends Component {
 
@@ -13,8 +12,8 @@ class Button extends Component {
 
   render() {
     var clicked = this.state && this.state.clicked;
-    const status = ["", "new-order", "in-prosess", "complete"];
-    const text = ["", "Ný Pöntun", "Í Vinslu", "Afgreitt"]
+    const status = ["new-order", "in-prosess", "complete"];
+    const text = ["Ný Pöntun", "Í Vinslu", "Afgreitt"]
     const clickedInfo = (clicked ? 'clicked' : undefined);
     const cName = clickedInfo + ' ' + status[this.state.status];
     return <div className={'button ' + cName}
@@ -23,8 +22,8 @@ class Button extends Component {
 
   onClick() {
     let temp = this.state.status;
-    if(temp < 3) {
-      temp = temp %3+1;
+    if(temp < 2) {
+      temp = temp %2+1;
     }
     this.setState({ status : temp });
     this.props.getStatus(temp);

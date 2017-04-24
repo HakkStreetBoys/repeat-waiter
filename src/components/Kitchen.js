@@ -8,15 +8,15 @@ const getStatus = (status_drink) => {
 let checkOld = {};
 checkOld.className = '';
 
-const Kitchen = ({ orders, onOrdersSelect, active }) => {
-  const { order_number, food, table_number, status_food } = orders;
+const Kitchen = ({ theOrder, onOrdersSelect, active }) => {
+  const { title, table_number, status_food } = theOrder;
   return (
     <div onClick={ event =>
       {event.target.className = event.target.className ===
         "orders__button-container"?"orders__button-container orders__container-clicked":"orders__button-container";
         checkOld.className = "orders__button-container";
         checkOld = event.target;
-        return onOrdersSelect(orders)
+        return onOrdersSelect(theOrder)
       } }
       className="orders__container">
 
@@ -26,7 +26,7 @@ const Kitchen = ({ orders, onOrdersSelect, active }) => {
           {table_number}
         </div>
         <div className="orders__order">
-          {food}
+          {title}
         </div>
         <div className="orders__button-container">
           <Button status_drink={status_food} getStatus={getStatus} className="button" />
