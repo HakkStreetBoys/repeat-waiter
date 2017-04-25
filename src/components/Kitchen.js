@@ -14,9 +14,7 @@ const Kitchen = ({ theOrder, onOrdersSelect, active }) => {
   return (
     <div
       onClick={(event, k) =>
-        { console.log(k);
-          const activeOrders = document.querySelectorAll("[data-reactid='"+k+"']")[0];
-          console.log(activeOrders);
+        { const activeOrders = document.querySelectorAll("[data-reactid='"+k+"']")[0];
           activeOrders.className = activeOrders.className ===
           "orders__container"
           ? "orders__container orders__container-clicked"
