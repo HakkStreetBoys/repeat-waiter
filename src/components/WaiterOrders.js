@@ -29,8 +29,9 @@ class WaiterOrders extends Component {
     const numbers = [];
     const orders = [];
     let drinks = [];
-    for (let number in myOrders) {
-      const user = myOrders[number];
+    // for (let number in myOrders) {
+      const orderMap = _.map(myOrders, number => {
+      const user = number;
       const confirmedOrders = user ? user.confirmed_order : undefined;
       console.log("confirmedOrders", confirmedOrders);
       if (confirmedOrders) {
@@ -63,8 +64,10 @@ class WaiterOrders extends Component {
           }
         });
       }
-    }
+    });
     console.log("what is orders", orders);
+    console.log('meeee is',orderMap);
+    return orderMap.reverse();
   };
   render() {
     console.log(this.state);
@@ -76,6 +79,7 @@ class WaiterOrders extends Component {
       <div className="gag">
         <OrderDetail theOrder={this.state.selectedOrders} />
         <div className="content-left">
+
           <div className="orders">
             <ul>
               {this.renderOrder()}
