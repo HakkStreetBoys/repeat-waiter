@@ -6,7 +6,7 @@ const OrderDetail = ({ theOrder }) => {
     return <span className="fleh"></span>;
   }
   let price = 0;
-  const drinks = theOrder.map(order => {
+  const title = theOrder.map(order => {
     price += parseInt(order.price);
     return (
       <li>{order.title}</li>
@@ -39,7 +39,7 @@ const OrderDetail = ({ theOrder }) => {
             Pöntun:
           </div>
           <div className="single-content__drinks">
-            {drinks}
+            {title}
           </div>
         </div>
         <div className="single-content__price">

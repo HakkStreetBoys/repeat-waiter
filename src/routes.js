@@ -6,6 +6,7 @@ import WaiterOrders from './components/WaiterOrders';
 import KitchenOrders from './components/KitchenOrders';
 import CompleteOrders from './components/CompleteOrders';
 import TableOrders from './components/TableOrders';
+import NotFound from './components/NotFound';
 import OrderData from './OrderArr';
 
 export default (
@@ -14,5 +15,6 @@ export default (
   <Route path="kitchen" component={KitchenOrders} />
   <Route path="table" component={TableOrders} />
   <Route path="done" component={CompleteOrders} />
+  <Route path="*" component={NotFound} />
 </Route>
 );

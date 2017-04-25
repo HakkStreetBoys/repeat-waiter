@@ -1,38 +1,39 @@
 import React from 'react';
+import { Link, Route } from 'react-router';
 
 const Header = () => {
   return (
     <nav className="nav">
       <div className="nav__container">
-        <a className="nav__logo-link" href="/">
+        <Link to="/">
           <div className="nav__logo">
           </div>
-        </a>
+        </Link>
         <div className="nav__list-container">
           <ul className="nav__list">
             <li>
-              <a className="nav__links" href="/">
+              <Link to="/">
                 Þjónar
                 <div className="nav__waiter"></div>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="nav__links" href="/kitchen">
+              <Link to="/kitchen">
                 Eldhús
                 <div className="nav__kitchen"></div>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="nav__links" href="/table">
+              <Link to="/table">
                 Borð
                 <div className="nav__table"></div>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="nav__links" href="/done">
+              <Link to="/done">
                 Afgreitt
                 <div className="nav__done"></div>
-              </a>
+              </Link>
             </li>
           </ul>
 

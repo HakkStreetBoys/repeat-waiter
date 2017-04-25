@@ -15,7 +15,7 @@ let checkOld = {};
 checkOld.className = "";
 
 const Complete = ({ theOrder, onOrdersSelect, active }) => {
-  const { title, table_number, status_food, status_pay } = theOrder;
+  const { title, table_number, status_food, status_pay } = theOrder[0];
   return (
     <div
       onClick={(event, k) =>
@@ -45,7 +45,7 @@ const Complete = ({ theOrder, onOrdersSelect, active }) => {
             </Col>
             <Col md="3">
               <div className="orders__order">
-                {title}
+                {title}{theOrder.length > 1?'+':null}
               </div>
             </Col>
             <div className="orders__button-container">
