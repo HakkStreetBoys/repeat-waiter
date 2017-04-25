@@ -5,6 +5,13 @@ const OrderDetail = ({ theOrder }) => {
   if(!theOrder) {
     return <span className="fleh"></span>;
   }
+  let price = 0;
+  const drinks = theOrder.map(order => {
+    price += parseInt(order.price);
+    return (
+      <li>{order.title}</li>
+    )
+  });
 
   return (
     <div className="single-content">
@@ -15,7 +22,7 @@ const OrderDetail = ({ theOrder }) => {
               Símanúmer:
             </div>
             <div className="single-content__phone-number">
-              {'+' + theOrder.userID}
+              {'+' + theOrder[0].userID}
             </div>
           </div>
         </div>
@@ -24,7 +31,7 @@ const OrderDetail = ({ theOrder }) => {
             Borð Númer:
           </div>
           <div className="single-content__table-number">
-            #{theOrder.table_number}
+            #{theOrder[0].table_number}
           </div>
         </div>
         <div className="single-content__order">
@@ -32,7 +39,7 @@ const OrderDetail = ({ theOrder }) => {
             Pöntun:
           </div>
           <div className="single-content__drinks">
-            {theOrder.title}
+            {drinks}
           </div>
         </div>
         <div className="single-content__price">
@@ -40,7 +47,7 @@ const OrderDetail = ({ theOrder }) => {
             Verð samtals:
           </div>
           <div className="single-content__price-output">
-            {theOrder.price}
+            {price}
           </div>
         </div>
       </div>

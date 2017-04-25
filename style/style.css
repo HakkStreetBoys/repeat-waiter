@@ -102,10 +102,9 @@ table {
 /*---------Spinner-----------*/
 
 .spinner {
-  width: 100%;
-  height: 100%;
+	width: 100%;
   position: absolute;
-  top: 0;
+  top: calc(100vh - 45%);
   display: flex;
   justify-content: center;
   z-index: 9999;
@@ -257,6 +256,7 @@ table {
   width: 50%;
   height: calc(100vh - 215px);
   overflow: scroll;
+	border-right: 1px solid #b7b7b7;
 }
 
 .content-left__header {
@@ -289,7 +289,6 @@ table {
   float: right;
   width: 50%;
   height: calc(100vh - 215px);
-  background-color: #f2f3f7;
 }
 
 /*---------Orders-----------*/
@@ -370,7 +369,6 @@ table {
 	width: 50%;
 	background-color: #fff;
 	overflow: scroll;
-	border-left: 1px solid #b7b7b7;
 }
 
 .single-content__info {

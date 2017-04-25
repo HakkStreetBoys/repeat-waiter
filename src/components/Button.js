@@ -13,7 +13,7 @@ class Button extends Component {
   render() {
     var clicked = this.state && this.state.clicked;
     const status = ["new-order", "in-prosess", "complete"];
-    const text = ["Ný Pöntun", "Í Vinslu", "Afgreitt"]
+    const text = ["Ný Pöntun", "Í Vinnslu", "Afgreitt"]
     const clickedInfo = (clicked ? 'clicked' : undefined);
     const cName = clickedInfo + ' ' + status[this.state.status];
     return <div className={'button ' + cName}

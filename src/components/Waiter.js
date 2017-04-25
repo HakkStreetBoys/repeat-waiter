@@ -10,13 +10,12 @@ let checkOld = {};
 checkOld.className = '';
 
 const Waiter = ({ theOrder, onOrdersSelect, active }) => {
-  const { title, table_number, status_drink } = theOrder;
+  console.log('blee' , theOrder);
+  const { title, table_number, status_drink } = theOrder[0];
   return (
     <div
       onClick={(event, k) =>
-        { console.log(k);
-          const activeOrders = document.querySelectorAll("[data-reactid='"+k+"']")[0];
-          console.log(activeOrders);
+        { const activeOrders = document.querySelectorAll("[data-reactid='"+k+"']")[0];
           activeOrders.className = activeOrders.className ===
           "orders__container"
           ? "orders__container orders__container-clicked"
@@ -40,7 +39,7 @@ const Waiter = ({ theOrder, onOrdersSelect, active }) => {
             </Col>
             <Col md="3">
               <div className="orders__order">
-                {title}
+                {title}{theOrder.length > 1?'+':null}
               </div>
             </Col>
             <Col md="3">
