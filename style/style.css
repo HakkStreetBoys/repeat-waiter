@@ -186,10 +186,10 @@ table {
 .nav__logo {
   position: relative;
   float: left;
-  width: 114px;
-  height: 42px;
-  margin: 19px 0 0 35px;
-  background: url('../src/images/logo.png');
+  width: 65px;
+  height: 65px;
+  margin: 7.5px 0 0 100px;
+  background: url('../src/images/logo.svg') no-repeat;
 }
 
 .nav__list-container ul {
@@ -313,13 +313,20 @@ table {
 .content-left__order-nr {
   position: relative;
   float: left;
-  margin-left: 30px;
+}
+
+.content-left__table-nr {
+	  margin-left: 10px;
+}
+
+.content-left__order-nr {
+	margin-left:50px;
 }
 
 .content-left__order-status {
   position: relative;
-  float: right;
-  margin-right: 150px;
+  float: left;
+  margin-left: 20%;
 }
 
 .content__right {
@@ -348,7 +355,7 @@ table {
 }
 
 .orders__container-clicked {
-	background-color: gray;
+	background-color: #f9f9f9;
 }
 
 .orders__stripe {
@@ -393,6 +400,11 @@ table {
 .payment-status__img {
 	margin: 0 0 5px 10px;
 }
+
+.orders__plus {
+	margin: 0 0 5px 10px;
+}
+
 /*-----------Single Content-----------*/
 
 .gag {
@@ -405,7 +417,7 @@ table {
 	right: 0;
 	height: calc(100vh - 215px);
 	width: 50%;
-	background-color: #fff;
+	background-color: #f9f9f9;
 	overflow: scroll;
 }
 
@@ -428,7 +440,8 @@ table {
 .single-content__costomer-title,
 .single-content__phone-title,
 .single-content__table-title,
-.single-content__order-title {
+.single-content__order-title,
+.single-content__price-title {
 	font-size: 14px;
 	font-family: RoundLight;
 }
@@ -437,7 +450,8 @@ table {
 .single-content__phone-number,
 .single-content__table-number,
 .single-content__drinks,
-.single-content__food {
+.single-content__food,
+.single-content__price-output {
 	font-size: 20px;
 	font-family: RoundLight;
 }

@@ -3,14 +3,13 @@ import { Container, Row, Col } from "reactstrap";
 import Button from './Button'
 
 const getStatus = (status_drink) => {
-  console.log( "inGetStatus ", status_drink );
+  // console.log( "inGetStatus ", status_drink );
 }
 
 let checkOld = {};
 checkOld.className = '';
 
 const Waiter = ({ theOrder, onOrdersSelect, active }) => {
-  console.log('blee' , theOrder);
   const { title, table_number, status_drink } = theOrder[0];
   return (
     <div
@@ -39,7 +38,7 @@ const Waiter = ({ theOrder, onOrdersSelect, active }) => {
             </Col>
             <Col md="3">
               <div className="orders__order">
-                {title}{theOrder.length > 1?'+':null}
+                {title}{theOrder.length > 1? <img className="orders__plus" src="/src/icons/plus.svg" /> :null}
               </div>
             </Col>
             <Col md="3">

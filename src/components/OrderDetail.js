@@ -39,7 +39,9 @@ const OrderDetail = ({ theOrder }) => {
             Pöntun:
           </div>
           <div className="single-content__drinks">
-            {title}
+            <ul>
+              {title}
+            </ul>
           </div>
         </div>
         <div className="single-content__price">
