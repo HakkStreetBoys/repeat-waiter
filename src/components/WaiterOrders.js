@@ -18,31 +18,30 @@ class WaiterOrders extends Component {
   componentWillMount() {
     var component = this;
     firebase.database().ref("users").on("value", snapshot => {
-      console.log(snapshot.val());
+      // console.log(snapshot.val());
       this.setState({ myOrders: snapshot.val(), loading: false });
     });
   }
 
   renderOrder = () => {
     const { myOrders } = this.state;
-    console.log("what is myOrders", myOrders);
+    // console.log("what is myOrders", myOrders);
     const numbers = [];
     const orders = [];
     let drinks = [];
-    // for (let number in myOrders) {
       const orderMap = _.map(myOrders, number => {
       const user = number;
       const confirmedOrders = user ? user.confirmed_order : undefined;
-      console.log("confirmedOrders", confirmedOrders);
+      // console.log("confirmedOrders", confirmedOrders);
       if (confirmedOrders) {
         return _.map(confirmedOrders, (order, i) => {
-          console.log("order in confirmedOrders", order);
+          // console.log("order in confirmedOrders", order);
           drinks = [];
           orders.push(order);
           let item;
           for (let product in order) {
             item = order[product];
-            console.log("hello", item);
+            // console.log("hello", item);
             if (item.category == "drykkur" && item.status_drink != "2") {
               drinks.push(item);
             }
@@ -65,12 +64,11 @@ class WaiterOrders extends Component {
         });
       }
     });
-    console.log("what is orders", orders);
-    console.log('meeee is',orderMap);
+    // console.log("what is orders", orders);
+    // console.log('meeee is',orderMap);
     return orderMap.reverse();
   };
   render() {
-    console.log(this.state);
     const { state } = this;
     if (this.state.loading == true) {
       return <Spinner />;

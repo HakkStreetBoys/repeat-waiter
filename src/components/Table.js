@@ -43,7 +43,7 @@ const Table = ({ theOrder, onOrdersSelect, active }) => {
             </Col>
             <Col md="3">
               <div className="orders__order">
-                {title}{theOrder.length > 1?'+':null}
+                {title}{theOrder.length > 1? <img className="orders__plus" src="/src/icons/plus.svg" /> :null}
               </div>
             </Col>
             <div className="orders__button-container">

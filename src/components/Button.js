@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import firebase from "./firebase";
 class Button extends Component {
 
   constructor(props) {
@@ -18,16 +18,19 @@ class Button extends Component {
     const cName = clickedInfo + ' ' + status[this.state.status];
     return <div className={'button ' + cName}
       onClick={this.onClick.bind(this)}>{text[this.state.status]}</div>
+
   }
 
   onClick() {
     let temp = this.state.status;
+    // this.props.userRef.child('orders').set({status_food: temp};
     if(temp < 2) {
       temp = temp %2+1;
     }
     this.setState({ status : temp });
     this.props.getStatus(temp);
   }
+
 
 
 };
