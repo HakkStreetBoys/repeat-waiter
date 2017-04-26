@@ -6,10 +6,12 @@ const OrderDetail = ({ theOrder }) => {
     return <span className="fleh"></span>;
   }
   let price = 0;
+  let quantity = 0;
   const title = theOrder.map(order => {
     price += parseInt(order.price);
+    quantity += parseInt(order.quantity)
     return (
-      <li>{order.title}</li>
+      <li>{quantity}x {order.title}</li>
     )
   });
 
