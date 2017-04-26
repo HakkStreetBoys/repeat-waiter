@@ -10,7 +10,7 @@ let checkOld = {};
 checkOld.className = '';
 
 const Kitchen = ({ theOrder, onOrdersSelect, active }) => {
-  const { title, table_number, status_food } = theOrder[0];
+  const { title, table_number, status_food, quantity } = theOrder[0];
   return (
     <div
       onClick={(event, k) =>
@@ -37,7 +37,7 @@ const Kitchen = ({ theOrder, onOrdersSelect, active }) => {
             </Col>
             <Col md="3">
               <div className="orders__order">
-                {title}{theOrder.length > 1? <img className="orders__plus" src="/src/icons/plus.svg" /> :null}
+                {quantity}x {title}{theOrder.length > 1? <img className="orders__plus" src="/src/icons/plus.svg" /> :null}
               </div>
             </Col>
             <Col md="3">

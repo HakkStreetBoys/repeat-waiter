@@ -15,7 +15,7 @@ let checkOld = {};
 checkOld.className = '';
 
 const Table = ({ theOrder, onOrdersSelect, active }) => {
-  const { order_number, title, table_number, status_drink, status_food, status_pay } = theOrder[0];
+  const { order_number, title, table_number, status_drink, status_food, status_pay, quantity } = theOrder[0];
   return (
     <div
       onClick={(event, k) =>
@@ -43,7 +43,7 @@ const Table = ({ theOrder, onOrdersSelect, active }) => {
             </Col>
             <Col md="3">
               <div className="orders__order">
-                {title}{theOrder.length > 1? <img className="orders__plus" src="/src/icons/plus.svg" /> :null}
+                {quantity}x {title}{theOrder.length > 1? <img className="orders__plus" src="/src/icons/plus.svg" /> :null}
               </div>
             </Col>
             <div className="orders__button-container">
