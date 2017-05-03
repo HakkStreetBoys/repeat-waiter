@@ -44,7 +44,7 @@ class CompleteOrders extends Component {
           for (let product in order) {
             item = order[product];
             console.log("hello", item);
-            if (item.status_food == '2' && item.status_drink == '2') {
+            if ( item.status_food == '2' && item.status_drink == '2' ) {
               food.push(item);
             }
           }

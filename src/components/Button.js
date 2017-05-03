@@ -23,10 +23,18 @@ class Button extends Component {
 
   onClick() {
     let temp = this.state.status;
-    // this.props.userRef.child('orders').set({status_food: temp};
+
     if(temp < 2) {
       temp = temp %2+1;
     }
+    // let finalKey = this.props.key3.toString();
+    firebase.database().ref("users/"+ this.props.key2+"/"+this.props.key1+'/'+ this.props.key3).update({
+      status_drink: temp,
+    });
+    console.log('key2 ',this.props.key2);
+    console.log('key ',this.props.key1);
+    console.log('finalKey ',this.props.key3);
+    // this.props.onButtonClick(temp);
     this.setState({ status : temp });
     this.props.getStatus(temp);
   }
