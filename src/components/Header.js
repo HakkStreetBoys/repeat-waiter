@@ -5,46 +5,39 @@ const Header = () => {
   return (
     <nav className="nav">
       <div className="nav__container">
-        <Link to="/">
-          <div className="nav__logo">
-          </div>
-        </Link>
         <div className="nav__list-container">
           <ul className="nav__list">
             <li>
               <Link to="/">
-                Þjónar
                 <div className="nav__waiter"></div>
+                Drykkir
               </Link>
             </li>
             <li>
               <Link to="/kitchen">
-                Eldhús
                 <div className="nav__kitchen"></div>
+                Matur
               </Link>
             </li>
             <li>
               <Link to="/table">
-                Borð
                 <div className="nav__table"></div>
+                Borð
               </Link>
             </li>
             <li>
               <Link to="/done">
-                Afgreitt
                 <div className="nav__done"></div>
+                Afgreitt
               </Link>
             </li>
           </ul>
+          {/* <Link to="/">
+            <div className="nav__logo">
+            </div>
+          </Link> */}
+        </div>
 
-        </div>
-      </div>
-      <div className="nav__sub-container">
-        <div className="nav__sub-header">
-          Nýjustu pantanir
-        </div>
-        <div className="nav__sub-icon">
-        </div>
       </div>
     </nav>
 
