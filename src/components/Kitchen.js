@@ -9,8 +9,8 @@ const getStatus = (status_item) => {
 let checkOld = {};
 checkOld.className = '';
 
-const Kitchen = ({ theOrder, onOrdersSelect, active }) => {
-  const { title, table_number, status_food, quantity } = theOrder[0];
+const Kitchen = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
+  const { title, table_number, status_item, quantity } = theOrder[0];
   return (
     <div
       onClick={(event, k) =>
@@ -44,7 +44,7 @@ const Kitchen = ({ theOrder, onOrdersSelect, active }) => {
             </Col>
             <Col md={{ size: 3, push: 2 }} lg={{ size: 3, push: 2 }}>
               <div className="orders__button-container">
-                <Button status_item={status_food} getStatus={getStatus} />
+                <Button status_item={status_item} getStatus={getStatus} key1={key1} key2={key2} key3={key3} />
               </div>
             </Col>
           </div>

@@ -23,75 +23,114 @@ class TableOrders extends Component {
 
   renderOrder = () => {
     const { myOrders } = this.state;
-    console.log("what is myOrders", myOrders);
     const numbers = [];
     const orders = [];
-    let food = [];
-    // for (let number in myOrders) {
-      const orderMap = _.map(myOrders, number => {
+    let drinks = [];
+      const orderMap = _.map(myOrders, (number, i2) => {
       const user = number;
       const confirmedOrders = user ? user.confirmed_order : undefined;
-      console.log("confirmedOrders", confirmedOrders);
       if (confirmedOrders) {
         return _.map(confirmedOrders, (order, i) => {
-          console.log("order in confirmedOrders", order);
-          food = [];
+          drinks = [];
           orders.push(order);
           let item;
+          let item2;
           for (let product in order) {
             item = order[product];
-            console.log("hello", item);
+            item2 = _.keys(order);
             if (item.category == "matur" || item.category == "drykkur") {
-              food.push(item);
+              drinks.push(item);
             }
           }
-          if (food.length > 0) {
-            return (
-              <Table
-                key={i}
-                theOrder={food}
-                onOrdersSelect={selectedOrders => {
-                  this.setState({
-                    selectedOrders: selectedOrders,
-                    isActive: "orders__container-clicked"
-                  });
-                }}
-                active={this.state.isActive}
-              />
-            );
+          if (drinks.length > 0) {
+
+            return ({
+              timeStamp:item.createdAt,
+              waiter:
+                <Table
+                  key1={i}
+                  key2={i2}
+                  key3={item2}
+                  theOrder={drinks}
+                  onOrdersSelect={selectedOrders => {
+                    this.setState({
+                      selectedOrders: selectedOrders,
+                      isActive: "orders__container-clicked"
+                    });
+                  }}
+                  active={this.state.isActive}
+                />
+            });
           }
         });
       }
     });
-    console.log("what is orders", orders);
-    console.log('meeee is',orderMap);
-    return orderMap.reverse();
-
-
-    // return _.map(this.state.myOrders, (user, key, key1) => {
-    //   // console.log(myOrder);
-    //   if (user.confirmed_order) {
-    //     return _.map(user.confirmed_order, (Order, key, key1) => {
-    //       return _.map(Order, (theOrder, key, key1) => {
-    //         return (
-    //           <Table
-    //             key={key}
-    //             key1={key1}
-    //             theOrder={theOrder}
-    //             onOrdersSelect={selectedOrders => {
-    //               this.setState({
-    //                 selectedOrders: selectedOrders,
-    //                 isActive: "orders__container-clicked"
-    //               });
-    //             }}
-    //             active={this.state.isActive}
-    //           />
-    //         );
-    //       });
-    //     });
-    //   }
-    // });
+    const user_orders = orderMap.map(item => {
+      if(item){
+        const items = item.filter(i => typeof i != 'undefined');
+        return items;
+      }
+    });
+    let all_waiters = [];
+    user_orders.forEach((orders) => {
+      if(orders){
+        orders.forEach(order => {
+          all_waiters.push(order);
+        })
+      }
+    });
+    all_waiters.sort((a,b) => {
+      return a.timeStamp - b.timeStamp;
+    })
+    all_waiters = all_waiters.map(waiter => waiter.waiter)
+    return all_waiters;
   };
+  // renderOrder = () => {
+  //   const { myOrders } = this.state;
+  //   console.log("what is myOrders", myOrders);
+  //   const numbers = [];
+  //   const orders = [];
+  //   let food = [];
+  //   // for (let number in myOrders) {
+  //     const orderMap = _.map(myOrders, number => {
+  //     const user = number;
+  //     const confirmedOrders = user ? user.confirmed_order : undefined;
+  //     console.log("confirmedOrders", confirmedOrders);
+  //     if (confirmedOrders) {
+  //       return _.map(confirmedOrders, (order, i) => {
+  //         console.log("order in confirmedOrders", order);
+  //         food = [];
+  //         orders.push(order);
+  //         let item;
+  //         for (let product in order) {
+  //           item = order[product];
+  //           console.log("hello", item);
+  //           if (item.category == "matur" || item.category == "drykkur") {
+  //             food.push(item);
+  //           }
+  //         }
+  //         if (food.length > 0) {
+  //           return (
+  //             <Table
+  //               key={i}
+  //               theOrder={food}
+  //               onOrdersSelect={selectedOrders => {
+  //                 this.setState({
+  //                   selectedOrders: selectedOrders,
+  //                   isActive: "orders__container-clicked"
+  //                 });
+  //               }}
+  //               active={this.state.isActive}
+  //             />
+  //           );
+  //         }
+  //       });
+  //     }
+  //   });
+  //   console.log("what is orders", orders);
+  //   console.log('meeee is',orderMap);
+  //   return orderMap.reverse();
+  // };
   render() {
     const { state } = this;
     return (

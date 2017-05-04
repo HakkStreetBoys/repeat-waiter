@@ -40,8 +40,6 @@ class WaiterOrders extends Component {
       // console.log('i2 ',i2);
       if (confirmedOrders) {
         return _.map(confirmedOrders, (order, i) => {
-          // console.log("order in confirmedOrders", order);
-
           drinks = [];
           orders.push(order);
           let item;
@@ -49,13 +47,11 @@ class WaiterOrders extends Component {
           for (let product in order) {
             item = order[product];
             item2 = _.keys(order);
-            //  console.log("hello", item2);
             if (item.category == "drykkur" && item.status_item != "2") {
               drinks.push(item);
             }
           }
           if (drinks.length > 0) {
-            // console.log('i',i);
 
             return ({
               timeStamp:item.createdAt,
@@ -73,27 +69,18 @@ class WaiterOrders extends Component {
                     });
                   }}
                   active={this.state.isActive}
-              />
+                />
             });
           }
         });
       }
     });
-    // console.log("what is orders", orders);
-    // console.log('meeee is',orderMap)
-
-    // const all_waiters = orderMap.filter(item => {
-    //
-    //   typeof item != "undefined"
-    //
-    // });
     console.log('1ordermap',orderMap)
     const user_orders = orderMap.map(item => {
       if(item){
         const items = item.filter(i => typeof i != 'undefined');
         return items;
       }
-
     });
     console.log('user_orders',user_orders)
     let all_waiters = [];
