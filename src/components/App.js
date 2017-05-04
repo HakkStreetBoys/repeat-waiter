@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './Header'
-import Content from './Content'
 
 import firebase from "./firebase";
 
@@ -33,8 +32,7 @@ state = {
           <Header />
         </div>
         <div className="content">
-          <Content />
-            {this.props.children}
+          {this.props.children}
         </div>
       </div>
     );
