@@ -3,19 +3,19 @@ import { Container, Row, Col } from "reactstrap";
 import Button from "./Button";
 import PaymentStatus from "./PaymentStatus";
 
-const getStatus = status_drink => {
-  console.log("inGetStatus ", status_drink);
+const getStatus = status_item => {
+  console.log("inGetStatus ", status_item);
 };
 
 const getStatusPay = status_pay => {
-  console.log("inGetStatus ", status_drink);
+  console.log("inGetStatus ", status_item);
 };
 
 let checkOld = {};
 checkOld.className = "";
 
-const Complete = ({ theOrder, onOrdersSelect, active }) => {
-  const { title, table_number, status_food, status_pay, quantity } = theOrder[0];
+const Complete = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
+  const { title, table_number, status_item, status_pay, quantity } = theOrder[0];
   return (
     <div
       onClick={(event, k) =>
@@ -50,7 +50,7 @@ const Complete = ({ theOrder, onOrdersSelect, active }) => {
             </Col>
             <div className="orders__button-container">
               <Col md="3">
-                <Button status_drink={status_food} getStatus={getStatus} />
+                <Button status_item={status_item} getStatus={getStatus} key1={key1} key2={key2} key3={key3} />
               </Col>
             </div>
             <Col md="4">
