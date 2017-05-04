@@ -2,8 +2,8 @@ import React from 'react';
 import { Container, Row, Col } from "reactstrap";
 import Button from './Button'
 
-const getStatus = (status_drink) => {
-  console.log( "inGetStatus ", status_drink );
+const getStatus = (status_item) => {
+  console.log( "inGetStatus ", status_item );
 }
 
 let checkOld = {};
@@ -44,7 +44,7 @@ const Kitchen = ({ theOrder, onOrdersSelect, active }) => {
             </Col>
             <Col md={{ size: 3, push: 2 }} lg={{ size: 3, push: 2 }}>
               <div className="orders__button-container">
-                <Button status_drink={status_food} getStatus={getStatus} />
+                <Button status_item={status_food} getStatus={getStatus} />
               </div>
             </Col>
           </div>

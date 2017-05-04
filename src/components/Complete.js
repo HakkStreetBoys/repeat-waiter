@@ -3,12 +3,12 @@ import { Container, Row, Col } from "reactstrap";
 import Button from "./Button";
 import PaymentStatus from "./PaymentStatus";
 
-const getStatus = status_drink => {
-  console.log("inGetStatus ", status_drink);
+const getStatus = status_item => {
+  console.log("inGetStatus ", status_item);
 };
 
 const getStatusPay = status_pay => {
-  console.log("inGetStatus ", status_drink);
+  console.log("inGetStatus ", status_item);
 };
 
 let checkOld = {};
@@ -50,7 +50,7 @@ const Complete = ({ theOrder, onOrdersSelect, active }) => {
             </Col>
             <div className="orders__button-container">
               <Col md="3">
-                <Button status_drink={status_food} getStatus={getStatus} />
+                <Button status_item={status_food} getStatus={getStatus} />
               </Col>
             </div>
             <Col md="4">

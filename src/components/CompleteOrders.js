@@ -44,7 +44,7 @@ class CompleteOrders extends Component {
           for (let product in order) {
             item = order[product];
             console.log("hello", item);
-            if ( item.status_food == '2' && item.status_drink == '2' ) {
+            if ( item.status_item == '2' ) {
               food.push(item);
             }
           }
@@ -74,7 +74,7 @@ class CompleteOrders extends Component {
     //   if(user.confirmed_order) {
     //     return _.map(user.confirmed_order, (Order, key, key1) => {
     //       return _.map(Order, (theOrder, key, key1)=> {
-    //         if(theOrder.status_food == "2" && theOrder.status_drink == "2") {
+    //         if(theOrder.status_food == "2" && theOrder.status_item == "2") {
     //
     //       return (
     //             <Complete
