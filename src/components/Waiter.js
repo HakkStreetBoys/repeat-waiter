@@ -10,7 +10,7 @@ let checkOld = {};
 checkOld.className = '';
 
 const Waiter = ({ theOrder, onOrdersSelect, active }) => {
-  const { title, table_number, status_drink, quantity } = theOrder[0];
+  const { title, table_number, status_item, quantity } = theOrder[0];
   return (
     <li className="orders__items">
       <div
@@ -25,17 +25,15 @@ const Waiter = ({ theOrder, onOrdersSelect, active }) => {
             return onOrdersSelect(theOrder);
           }}
         className="orders__container">
-
+          <Button status_item={status_item} getStatus={getStatus} />
         <div className="orders__item">
           <div className="orders__table_number">
-            Borð númer {table_number}
+            Borð {table_number}
           </div>
           <ul className="orders__order">
             <li>{quantity}x {title}</li>
           </ul>
-          <div className="orders__button-container">
-            <Button status_drink={status_drink} getStatus={getStatus} />
-          </div>
+
         </div>
       </div>
     </li>

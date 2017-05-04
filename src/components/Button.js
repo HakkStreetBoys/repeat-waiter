@@ -6,7 +6,7 @@ class Button extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      status : this.props.status_drink,
+      status : this.props.status_item,
     }
   }
 
