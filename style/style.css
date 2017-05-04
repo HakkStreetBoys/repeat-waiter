@@ -58,7 +58,7 @@ table {
 
 	margin: 17.5px 40px 0 0;
 	border: none;
-  font-family: RoundLight;
+  font-family: canada-type-gibson;
   font-size: 14px;
   background-color: #1491f1;
   color: #fff;
@@ -84,19 +84,8 @@ table {
 /*---------Fonts-----------*/
 
 @font-face {
-  font-family: 'RoundLight';
-  src: url('../src/fonts/din-round/din-round-light.eot') format('embedded-opentype'),
-  url('../src/fonts/din-round/din-round-light.woff') format('woff'),
-  url('../src/fonts/din-round/din-round-light.ttf')  format('truetype');
+  font-family: 'canada-type-gibson';
   font-weight: 300;
-}
-
-@font-face {
-  font-family: 'RoundBold';
-  src: url('../src/fonts/din-round/din-round-bold.eot') format('embedded-opentype'),
-  url('../src/fonts/din-round/din-round-bold.woff') format('woff'),
-  url('../src/fonts/din-round/din-round-bold.ttf')  format('truetype');
-  font-weight: 800;
 }
 
 /*---------Spinner-----------*/
@@ -194,7 +183,7 @@ table {
 
 .nav__list-container ul {
     list-style-type: none;
-    margin: 0;
+    margin-left: 60px;
     overflow: hidden;
 }
 
@@ -210,18 +199,21 @@ table {
     text-align: center;
     padding: 14px 18px 5px 18px;
     text-decoration: none;
-    font-family: RoundLight;
+    font-family: canada-type-gibson;
+		font-weight: 400;
     font-size: 20px;
 		border-radius: 0 0 10px 10px;
 }
 
 .nav__list-container ul li a:hover {
     background-color: #343845;
-    text-decoration: none;
+		color: #fff;
+		font-weight: 600;
+		fill: #fff;
 }
 
 .nav__list-container ul li a:active {
-    background-color: #fff;
+    background-color: #343845;
 }
 
 .nav__waiter,
@@ -230,7 +222,7 @@ table {
 .nav__done {
   position: relative;
   height: 60px;
-  width: 60px;
+  width: 63px;
 }
 
 .nav__waiter {
@@ -249,6 +241,22 @@ table {
   background: url('../src/icons/complete.svg') no-repeat center center;
 }
 
+.nav__list-container ul li a:hover > .nav__waiter {
+	background: url('../src/icons/drinkwhite.svg') no-repeat center center;
+}
+
+.nav__list-container ul li a:hover > .nav__kitchen {
+	background: url('../src/icons/foodwhite.svg') no-repeat center center;
+}
+
+.nav__list-container ul li a:hover > .nav__table {
+	background: url('../src/icons/table2white.svg') no-repeat center center;
+}
+
+.nav__list-container ul li a:hover > .nav__done {
+	background: url('../src/icons/completewhite.svg') no-repeat center center;
+}
+
 /*---------Sub-Header-----------*/
 
 .nav__sub-container {
@@ -264,7 +272,7 @@ table {
   float: left;
   margin: 0 0 0 30px;
   line-height: 80px;
-  font-family: RoundLight;
+  font-family: canada-type-gibson;
   font-size: 24px;
   text-transform: uppercase;
 }
@@ -299,7 +307,7 @@ table {
   width: 100%;
   height: 55px;
   font-size: 14px;
-  font-family: RoundLight;
+  font-family: canada-type-gibson;
   text-transform: uppercase;
   line-height: 55px;
   background-color: #f2f3f7;
@@ -379,8 +387,9 @@ table {
 }
 
 .orders__table_number {
+	font-family: canada-type-gibson;
 	font-size: 20px;
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .orders__table_number,
@@ -454,7 +463,7 @@ table {
 .single-content__order-title,
 .single-content__price-title {
 	font-size: 14px;
-	font-family: RoundLight;
+	font-family: canada-type-gibson;
 }
 
 .single-content__costomer-name,
@@ -464,7 +473,7 @@ table {
 .single-content__food,
 .single-content__price-output {
 	font-size: 20px;
-	font-family: RoundLight;
+	font-family: canada-type-gibson;
 }
 
 .single-content__table {

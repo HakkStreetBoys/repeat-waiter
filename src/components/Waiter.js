@@ -10,7 +10,7 @@ let checkOld = {};
 checkOld.className = '';
 
 const Waiter = ({ theOrder, onOrdersSelect, active }) => {
-  const { title, table_number, status_drink, quantity } = theOrder;
+  const { title, table_number, status_drink, quantity } = theOrder[0];
   return (
     <li className="orders__items">
       <div
