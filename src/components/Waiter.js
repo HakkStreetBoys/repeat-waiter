@@ -2,14 +2,14 @@ import React from 'react';
 import { Container, Row, Col } from "reactstrap";
 import Button from './Button'
 
-const getStatus = (status_drink) => {
-  // console.log( "inGetStatus ", status_drink );
+const getStatus = (status_item) => {
+  // console.log( "inGetStatus ", status_item );
 }
 
 let checkOld = {};
 checkOld.className = '';
 
-const Waiter = ({ theOrder, onOrdersSelect, active }) => {
+const Waiter = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
   const { title, table_number, status_item, quantity } = theOrder[0];
   return (
     <li className="orders__items">
@@ -25,7 +25,7 @@ const Waiter = ({ theOrder, onOrdersSelect, active }) => {
             return onOrdersSelect(theOrder);
           }}
         className="orders__container">
-          <Button status_item={status_item} getStatus={getStatus} />
+          <Button status_item={status_item} getStatus={getStatus} key1={key1} key2={key2} key3={key3} />
         <div className="orders__item">
           <div className="orders__table_number">
             Borð {table_number}

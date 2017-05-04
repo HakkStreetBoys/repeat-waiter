@@ -7,7 +7,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "12",
     "status_food": "1",
-    "status_drink": "1",
+    "status_item": "1",
     "status_pay": "0",
   },
   {
@@ -18,7 +18,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "4",
     "status_food": "2",
-    "status_drink": "2",
+    "status_item": "2",
     "status_pay": "0",
   },
   {
@@ -29,7 +29,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "9",
     "status_food": "3",
-    "status_drink": "3",
+    "status_item": "3",
     "status_pay": "1",
   },
   {
@@ -40,7 +40,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "12",
     "status_food": "1",
-    "status_drink": "1",
+    "status_item": "1",
     "status_pay": "0",
   },
   {
@@ -51,7 +51,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "4",
     "status_food": "1",
-    "status_drink": "1",
+    "status_item": "1",
     "status_pay": "0",
   },
   {
@@ -62,7 +62,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "6",
     "status_food": "1",
-    "status_drink": "3",
+    "status_item": "3",
     "status_pay": "0",
   },
   {
@@ -73,7 +73,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "12",
     "status_food": "1",
-    "status_drink": "2",
+    "status_item": "2",
     "status_pay": "0",
   },
   {
@@ -84,7 +84,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "13",
     "status_food": "3",
-    "status_drink": "3",
+    "status_item": "3",
     "status_pay": "0",
   },
   {
@@ -95,7 +95,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "6",
     "status_food": "2",
-    "status_drink": "3",
+    "status_item": "3",
     "status_pay": "0",
   },
   {
@@ -106,7 +106,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "11",
     "status_food": "2",
-    "status_drink": "1",
+    "status_item": "1",
     "status_pay": "0",
   },
   {
@@ -117,7 +117,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "4",
     "status_food": "1",
-    "status_drink": "1",
+    "status_item": "1",
     "status_pay": "0",
   },
   {
@@ -128,7 +128,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "6",
     "status_food": "1",
-    "status_drink": "1",
+    "status_item": "1",
     "status_pay": "0",
   },
   {
@@ -139,7 +139,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "9",
     "status_food": "1",
-    "status_drink": "1",
+    "status_item": "1",
     "status_pay": "0",
   },
   {
@@ -150,7 +150,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "4",
     "status_food": "3",
-    "status_drink": "3",
+    "status_item": "3",
     "status_pay": "1",
   },
   {
@@ -161,7 +161,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "6",
     "status_food": "3",
-    "status_drink": "3",
+    "status_item": "3",
     "status_pay": "1",
   },
   {
@@ -172,7 +172,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "5",
     "status_food": "1",
-    "status_drink": "1",
+    "status_item": "1",
     "status_pay": "0",
   },
   {
@@ -183,7 +183,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "4",
     "status_food": "2",
-    "status_drink": "3",
+    "status_item": "3",
     "status_pay": "0",
   },
   {
@@ -194,7 +194,7 @@ const OrderData = [
     "price": "3290kr",
     "table_number": "6",
     "status_food": "1",
-    "status_drink": "1",
+    "status_item": "1",
     "status_pay": "0",
   }
 ]
