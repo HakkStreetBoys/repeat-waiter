@@ -93,17 +93,14 @@ class KitchenOrders extends Component {
     const { state } = this;
       return (
         <div className="gag">
-          <OrderDetail
-            theOrder={this.state.selectedOrders}
-          />
-          <div className="content-left">
-            <div className="orders">
-              <ul>
-                {this.renderOrder()}
-              </ul>
-            </div>
+          <OrderDetail theOrder={this.state.selectedOrders} />
+
+          <div className="orders">
+            <ul className="orders__list">
+              {this.renderOrder()}
+            </ul>
           </div>
-          </div>
+        </div>
       );
     }
 }

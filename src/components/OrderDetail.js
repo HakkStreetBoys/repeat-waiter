@@ -9,7 +9,7 @@ const OrderDetail = ({ theOrder }) => {
   let quantity = 0;
   const title = theOrder.map(order => {
     price += parseInt(order.price);
-    quantity += parseInt(order.quantity)
+    quantity = parseInt(order.quantity)
     return (
       <li>{quantity}x {order.title}</li>
     )

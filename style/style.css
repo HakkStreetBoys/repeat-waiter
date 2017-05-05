@@ -368,6 +368,14 @@ table {
 	padding: 20px;
 }
 
+.unpayd {
+	border: 1px solid #FFB1BA;
+}
+
+.payd {
+	border: 1px solid #50E3C2;
+}
+
 .orders__item {
 	margin: 15px 0px 0px 0px;
 }
@@ -422,6 +430,34 @@ table {
 
 .orders__plus {
 	margin: 0 0 5px 10px;
+}
+
+.orders__circle {
+	border-radius: 50%;
+	width: 28px;
+	height: 30px;
+	padding: 2px;
+	margin-right: 10px;
+	background: #E6E8EB;
+	text-align: center;
+	float: left;
+	color: #000;
+}
+
+.orders__phone {
+	float: right;
+	margin: 15px 0px 0px 0px;
+	color: 	#A9A9A9;
+	font-size: 14px;
+}
+
+.orders__price {
+	padding: 5px 0px 0px 37px;
+	float: right;
+}
+
+.orders__title {
+	font-size: 18px;
 }
 
 /*-----------Single Content-----------*/
