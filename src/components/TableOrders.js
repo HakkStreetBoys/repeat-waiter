@@ -136,12 +136,11 @@ class TableOrders extends Component {
     return (
       <div className="gag">
         <OrderDetail theOrder={this.state.selectedOrders} />
-        <div className="content-left">
-          <div className="orders">
-            <ul>
-              {this.renderOrder()}
-            </ul>
-          </div>
+
+        <div className="orders">
+          <ul className="orders__list">
+            {this.renderOrder()}
+          </ul>
         </div>
       </div>
     );
