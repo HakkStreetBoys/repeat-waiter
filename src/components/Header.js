@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Route } from 'react-router';
+import NavLink from './NavLink';
 
 const Header = () => {
   return (
@@ -8,28 +9,28 @@ const Header = () => {
         <div className="nav__list-container">
           <ul className="nav__list">
             <li>
-              <Link to="/">
+              <NavLink to="/" className="WaiterLink" activeClassName="active">
                 <div className="nav__waiter"></div>
                 Drykkir
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/kitchen">
+              <NavLink to="/kitchen" className="KitchenLink" activeClassName="active">
                 <div className="nav__kitchen"></div>
                 Matur
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/table">
+              <NavLink to="/table" className="TableLink" activeClassName="active">
                 <div className="nav__table"></div>
                 Borð
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/done">
+              <NavLink to="/done" className="DoneLink" activeClassName="active">
                 <div className="nav__done"></div>
                 Afgreitt
-              </Link>
+              </NavLink>
             </li>
           </ul>
           {/* <Link to="/">

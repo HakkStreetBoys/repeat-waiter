@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Kitchen from './Kitchen';
+import Waiter from './Waiter';
 import OrderDetail from './OrderDetail';
 import _ from 'lodash';
 import firebase from './firebase';
@@ -50,7 +50,7 @@ class KitchenOrders extends Component {
             return ({
               timeStamp:item.createdAt,
               waiter:
-                <Kitchen
+                <Waiter
                   key1={i}
                   key2={i2}
                   key3={item2}
