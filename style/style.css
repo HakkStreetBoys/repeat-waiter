@@ -56,13 +56,13 @@ table {
 	display: inline-block;
 	position: relative;
 	padding: 2px;
-	margin: 15px 0 0 0;
+	margin: 15px 0 5px 0;
 	border: none;
   font-family: canada-type-gibson;
   font-size: 14px;
   background-color: #1491f1;
   color: #fff;
-  border-radius: 7px;
+  border-radius: 10px;
 	width: 110px;
 	height: 25px;
 	line-height: 20px;
@@ -242,21 +242,38 @@ table {
   background: url('../src/icons/complete.svg') no-repeat center center;
 }
 
-.nav__list-container ul li a:hover > .nav__waiter {
+.nav__list-container ul li a:hover > .nav__waiter,
+.WaiterLink.active .nav__waiter {
 	background: url('../src/icons/drinkwhite.svg') no-repeat center center;
 }
 
-.nav__list-container ul li a:hover > .nav__kitchen {
+.nav__list-container ul li a:hover > .nav__kitchen,
+.KitchenLink.active .nav__kitchen{
 	background: url('../src/icons/foodwhite.svg') no-repeat center center;
 }
 
-.nav__list-container ul li a:hover > .nav__table {
+.nav__list-container ul li a:hover > .nav__table,
+.TableLink.active .nav__table {
 	background: url('../src/icons/table2white.svg') no-repeat center center;
 }
 
-.nav__list-container ul li a:hover > .nav__done {
+.nav__list-container ul li a:hover > .nav__done,
+.DoneLink.active .nav__done {
 	background: url('../src/icons/completewhite.svg') no-repeat center center;
 }
+
+.active {
+	background-color: #343845;
+	color: #fff;
+	fill: #fff;
+}
+
+.nav__list-container ul li .active {
+	background-color: #343845;
+	color: #fff;
+	fill: #fff;
+}
+
 
 /*---------Sub-Header-----------*/
 
@@ -362,6 +379,7 @@ table {
 
 .orders__items {
 	width: 20%;
+	height: 100%;
 	margin: 20px;
 	border: 1px solid #E6E8EB;
 	border-radius: 10px;
@@ -434,9 +452,8 @@ table {
 
 .orders__circle {
 	border-radius: 50%;
-	width: 28px;
-	height: 30px;
-	padding: 2px;
+	width: 25px;
+	height: 25px;
 	margin-right: 10px;
 	background: #E6E8EB;
 	text-align: center;
@@ -454,10 +471,29 @@ table {
 .orders__price {
 	padding: 5px 0px 0px 37px;
 	float: right;
+	color: #A9A9A9;
 }
 
 .orders__title {
-	font-size: 18px;
+	font-size: 16px;
+}
+
+.example-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+}
+
+.example-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0;
 }
 
 /*-----------Single Content-----------*/
