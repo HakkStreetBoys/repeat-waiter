@@ -41,10 +41,6 @@ const Header = () => {
 							</NavLink>
 						</li>
 					</ul>
-					{/* <Link to="/">
-            <div className="nav__logo">
-            </div>
-          </Link> */}
 				</div>
 
 			</div>

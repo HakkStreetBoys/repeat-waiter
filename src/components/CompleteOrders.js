@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Complete from './Complete'
+import Table from './Table'
 import OrderDetail from './OrderDetail'
 import _ from 'lodash'
 import firebase from './firebase'
@@ -52,7 +52,7 @@ class CompleteOrders extends Component {
 						return {
 							timeStamp: item.createdAt,
 							waiter: (
-								<Complete
+								<Table
 									key={i}
 									key1={i}
 									key2={i2}
@@ -100,7 +100,7 @@ class CompleteOrders extends Component {
 				<ReactCSSTransitionGroup
 					transitionName="example"
 					transitionAppear={true}
-          transitionAppearTimeout={700}
+					transitionAppearTimeout={700}
 					transitionEnter={false}
 					transitionLeave={true}
 					className="button-row"
