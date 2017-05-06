@@ -184,7 +184,7 @@ table {
 
 .nav__list-container ul {
     list-style-type: none;
-    margin-left: 60px;
+    margin-left: 20px;
     overflow: hidden;
 }
 
@@ -371,14 +371,14 @@ table {
 .orders__list {
 	width: 100%;
 	padding: 0;
-	margin: 0 3%;
+	margin: 0;
 	list-style: none;
 	display: flex;
 	-webkit-flex-flow: row wrap;
 }
 
 .orders__items {
-	width: 20%;
+	width: 21.8%;
 	height: 100%;
 	margin: 20px;
 	border: 1px solid #E6E8EB;
@@ -478,7 +478,65 @@ table {
 	font-size: 16px;
 }
 
-.example-enter {
+.bounce-enter {
+  font-size: 12px;
+  transition: font-size 1s ease;
+	animation-name: bounceIn;
+  animation-duration: 450ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.bounce-enter.bounce-enter-active {
+    font-size: 1em;
+}
+
+.bounce-leave {
+  opacity: 1;
+  transition: opacity .5s ease;
+	animation-name: bounceOut;
+  animation-duration: 450ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.bounce-leave.bounce-leave-active {
+  opacity: 0.01;
+}
+
+.bounce-appear {
+  opacity: 0.01;
+  transition: opacity 1s ease;
+	animation-name: bounceIn;
+  animation-duration: 450ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.bounce-appear.bounce-appear-active {
+  opacity: 1;
+}
+
+@keyframes bounceIn{
+  0%{
+    opacity: 0;
+    transform: scale(0.3) translate3d(0,0,0);
+  }
+  50%{
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80%{
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translate3d(0,0,0);
+  }
+}
+
+/*.example-enter {
   opacity: 0.01;
   transition: opacity .5s ease-in;
 }
@@ -489,13 +547,22 @@ table {
 
 .example-leave {
   opacity: 1;
-  transition: opacity .5s ease-in;
+  transition: opacity 1s ease-in;
 }
 
 .example-leave.example-leave-active {
-  opacity: 0;
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
 
+.example-appear {
+  opacity: 0.01;
+  transition: opacity 1s ease-in;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+}*/
 /*-----------Single Content-----------*/
 
 .gag {
