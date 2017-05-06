@@ -34,7 +34,7 @@ const Table = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
             // return onOrdersSelect(theOrder);
           }}
         className="orders__container">
-          <Button status_item={status_item} getStatus={getStatus} key1={key1} key2={key2} key3={key3} />
+        <Button status_item={status_item} getStatus={getStatus} key1={key1} key2={key2} key3={key3} />
         <div className="orders__phone">
           {userID}
         </div>
@@ -42,19 +42,22 @@ const Table = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
           <div className="orders__table_number">
             Borð {table_number}
           </div>
-          <ul className="orders__order">
-            <li>
-              <div className="orders__circle">
-                {quantity}
-              </div>
-              <div className="orders__title">
-                {title}
-              </div>
-            </li>
-            <div className="orders__price">
-              <li>{price} kr.</li>
+          {theOrder.map(oneOrder =>
+            <ul className="orders__order">
+              <li>
+                <div className="orders__circle">
+                  {oneOrder.quantity}
+                </div>
+                <div className="orders__title">
+                  {oneOrder.title}
+                </div>
+              </li>
+            </ul>
+          )}
+          <div className="orders__price">
+            {price} kr.
             </div>
-          </ul>
+
 
         </div>
       </div>

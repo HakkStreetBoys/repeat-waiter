@@ -45,7 +45,8 @@ class TableOrders extends Component {
           if (drinks.length > 0) {
 
             return ({
-              timeStamp:item.createdAt,
+              // timeStamp:item.createdAt,
+              tableNumber:item.table_number,
               waiter:
                 <Table
                   key1={i}
@@ -79,11 +80,14 @@ class TableOrders extends Component {
         })
       }
     });
+    // all_waiters.sort((a,b) => {
+    //   return a.timeStamp - b.timeStamp;
+    // })
     all_waiters.sort((a,b) => {
-      return a.timeStamp - b.timeStamp;
+      return a.tableNumber - b.tableNumber;
     })
     all_waiters = all_waiters.map(waiter => waiter.waiter)
-    return all_waiters;
+    return all_waiters.reverse();
   };
   // renderOrder = () => {
   //   const { myOrders } = this.state;
