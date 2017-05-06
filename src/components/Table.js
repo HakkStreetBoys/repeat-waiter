@@ -1,19 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import Button from './Button'
-import PaymentStatus from './PaymentStatus'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-
-const getStatus = status_item => {
-	console.log('inGetStatus ', status_item)
-}
-
-const getStatusPay = status_pay => {
-	console.log('inGetStatus ', status_pay)
-}
-
-let checkOld = {}
-checkOld.className = ''
 
 const Table = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 	const {
@@ -28,9 +16,21 @@ const Table = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 		price,
 	} = theOrder[0]
 	const status = ['unpayd', 'payd']
-	const text = ['Ógreidd Pöntun', 'Greidd Pöntun']
-	const image = ['../src/icons/stop.svg', '/src/icons/checked1.svg']
 	const cName = ' ' + status[status_pay]
+	let totalPrice = 0
+	const allTitle = theOrder.map(oneOrder => {
+		totalPrice += parseInt(oneOrder.price)
+		return (
+			<li>
+				<div className="orders__circle">
+					{oneOrder.quantity}
+				</div>
+				<div className="orders__title">
+					{oneOrder.title}
+				</div>
+			</li>
+		)
+	})
 	return (
 		<li className={'orders__items' + cName}>
 			<ReactCSSTransitionGroup
@@ -45,7 +45,6 @@ const Table = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 				<div className="orders__container">
 					<Button
 						status_item={status_item}
-						getStatus={getStatus}
 						key1={key1}
 						key2={key2}
 						key3={key3}
@@ -58,19 +57,11 @@ const Table = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 							Borð {table_number}
 						</div>
 						<ul className="orders__order">
-							<li>
-								<div className="orders__circle">
-									{quantity}
-								</div>
-								<div className="orders__title">
-									{title}
-								</div>
-							</li>
-							<div className="orders__price">
-								<li>{price} kr.</li>
-							</div>
+							{allTitle}
 						</ul>
-
+						<div className="orders__price">
+							<li>{totalPrice} kr.</li>
+						</div>
 					</div>
 				</div>
 			</ReactCSSTransitionGroup>

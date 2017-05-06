@@ -24,7 +24,6 @@ class Button extends Component {
       });
     }
     this.setState({ status : temp });
-    this.props.getStatus(temp);
   }
 
 
