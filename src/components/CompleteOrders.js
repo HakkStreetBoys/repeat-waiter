@@ -97,21 +97,21 @@ class CompleteOrders extends Component {
 		const { state } = this
 		return (
 			<div className="gag">
-				<ReactCSSTransitionGroup
-					transitionName="example"
-					transitionAppear={true}
-					transitionAppearTimeout={700}
-					transitionEnter={false}
-					transitionLeave={true}
-					className="button-row"
-					component="ul"
-				>
 					<div className="orders">
-						<ul className="orders__list">
+						<ReactCSSTransitionGroup
+							transitionName="bounce"
+							transitionAppear={false}
+							transitionAppearTimeout={700}
+							transitionEnter={false}
+							transitionEnterTimeout={700}
+							transitionLeave={true}
+							transitionLeaveTimeout={700}
+							className="orders__list"
+							component="ul"
+						>
 							{this.renderOrder()}
-						</ul>
+						</ReactCSSTransitionGroup>
 					</div>
-				</ReactCSSTransitionGroup>
 			</div>
 		)
 	}

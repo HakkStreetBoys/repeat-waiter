@@ -32,16 +32,15 @@ const Table = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 		)
 	})
 	return (
-		<li className={'orders__items' + cName}>
 			<ReactCSSTransitionGroup
-				transitionName="bounce"
+				transitionName="example"
 				transitionAppear={true}
-				transitionAppearTimeout={700}
-				transitionEnter={true}
+				transitionAppearTimeout={0}
+				transitionEnter={false}
 				transitionLeave={true}
 				transitionLeaveTimeout={700}
-				className="button-row"
-				component="ul"
+				className={'orders__items' + cName}
+				component="li"
 			>
 				<div className="orders__container">
 					<Button
@@ -66,7 +65,6 @@ const Table = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 					</div>
 				</div>
 			</ReactCSSTransitionGroup>
-		</li>
 	)
 }
 

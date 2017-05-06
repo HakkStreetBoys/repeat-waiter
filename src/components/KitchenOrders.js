@@ -4,6 +4,7 @@ import Waiter from './Waiter'
 import OrderDetail from './OrderDetail'
 import _ from 'lodash'
 import firebase from './firebase'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class KitchenOrders extends Component {
 	state = {
@@ -96,11 +97,21 @@ class KitchenOrders extends Component {
 		const { state } = this
 		return (
 			<div className="gag">
-				<div className="orders">
-					<ul className="orders__list">
-						{this.renderOrder()}
-					</ul>
-				</div>
+					<div className="orders">
+						<ReactCSSTransitionGroup
+							transitionName="bounce"
+							transitionAppear={false}
+							transitionAppearTimeout={700}
+							transitionEnter={false}
+							transitionEnterTimeout={700}
+							transitionLeave={true}
+							transitionLeaveTimeout={700}
+							className="orders__list"
+							component="ul"
+						>
+							{this.renderOrder()}
+						</ReactCSSTransitionGroup>
+					</div>
 			</div>
 		)
 	}
