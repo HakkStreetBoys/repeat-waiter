@@ -19,22 +19,25 @@ class WaiterOrders extends Component {
 	componentWillMount() {
 		var component = this
 		firebase.database().ref('users').on('value', snapshot => {
+			// console.log(snapshot.val());
 			this.setState({ myOrders: snapshot.val(), loading: false })
 		})
 	}
-
 	componentWillUnmount() {
 		firebase.database().ref('users').off()
 	}
 
 	renderOrder = () => {
 		const { myOrders } = this.state
+		// console.log("what is myOrders", myOrders);
 		const numbers = []
 		const orders = []
 		let drinks = []
 		const orderMap = _.map(myOrders, (number, i2) => {
 			const user = number
 			const confirmedOrders = user ? user.confirmed_order : undefined
+			// console.log("confirmedOrders", confirmedOrders);
+			// console.log('i2 ',i2);
 			if (confirmedOrders) {
 				return _.map(confirmedOrders, (order, i) => {
 					drinks = []
@@ -58,6 +61,7 @@ class WaiterOrders extends Component {
 									key2={i2}
 									key3={item2}
 									theOrder={drinks}
+									// onButtonClick={this.buttonOnClick}
 									onOrdersSelect={selectedOrders => {
 										this.setState({
 											selectedOrders: selectedOrders,
@@ -72,12 +76,14 @@ class WaiterOrders extends Component {
 				})
 			}
 		})
+		console.log('1ordermap', orderMap)
 		const user_orders = orderMap.map(item => {
 			if (item) {
 				const items = item.filter(i => typeof i != 'undefined')
 				return items
 			}
 		})
+		console.log('user_orders', user_orders)
 		let all_waiters = []
 		user_orders.forEach(orders => {
 			if (orders) {
@@ -86,9 +92,11 @@ class WaiterOrders extends Component {
 				})
 			}
 		})
+		console.log('all_waiters', all_waiters)
 		all_waiters.sort((a, b) => {
 			return a.timeStamp - b.timeStamp
 		})
+		console.log('2all_waiters', all_waiters)
 		all_waiters = all_waiters.map(waiter => waiter.waiter)
 		return all_waiters
 	}
@@ -100,22 +108,21 @@ class WaiterOrders extends Component {
 		}
 		return (
 			<div className="gag">
-				<ReactCSSTransitionGroup
-					transitionName="example"
-					transitionAppear={true}
-					transitionAppearTimeout={700}
-					transitionEnter={false}
-					transitionLeave={true}
-					className="button-row"
-					component="ul"
-				>
 					<div className="orders">
-						<ul className="orders__list">
+						<ReactCSSTransitionGroup
+							transitionName="bounce"
+							transitionAppear={false}
+							transitionAppearTimeout={700}
+							transitionEnter={false}
+							transitionEnterTimeout={700}
+							transitionLeave={true}
+							transitionLeaveTimeout={700}
+							className="orders__list"
+							component="ul"
+						>
 							{this.renderOrder()}
-
-						</ul>
+						</ReactCSSTransitionGroup>
 					</div>
-				</ReactCSSTransitionGroup>
 			</div>
 		)
 	}

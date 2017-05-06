@@ -32,15 +32,14 @@ const Complete = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 	const image = ['../src/icons/stop.svg', '/src/icons/checked1.svg']
 	const cName = ' ' + status[status_pay]
 	return (
-		<li className={'orders__items' + cName}>
 			<ReactCSSTransitionGroup
 				transitionName="bounce"
 				transitionAppear={true}
 				transitionAppearTimeout={700}
 				transitionEnter={true}
 				transitionLeave={true}
-				className="button-row"
-				component="ul"
+				className={'orders__items' + cName}
+				component="li"
 			>
 				<div className="orders__container">
 					<Button
@@ -74,7 +73,6 @@ const Complete = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 					</div>
 				</div>
 			</ReactCSSTransitionGroup>
-		</li>
 	)
 }
 

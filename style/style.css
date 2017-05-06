@@ -493,6 +493,23 @@ table {
 }
 
 .bounce-leave {
+  transform: translateX(0);
+	opacity: 0.01;
+  transition: opacity 1s ease;
+	animation-name: bounceOut;
+  animation-duration: 450ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+ /*end leave state */
+.bounce-leave.bounce-leave-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: .4s cubic-bezier(0.52, -0.37, 0.13, 1.22)
+}
+
+/*.bounce-leave {
   opacity: 1;
   transition: opacity .5s ease;
 	animation-name: bounceOut;
@@ -503,7 +520,7 @@ table {
 
 .bounce-leave.bounce-leave-active {
   opacity: 0.01;
-}
+}*/
 
 .bounce-appear {
   opacity: 0.01;
@@ -519,27 +536,43 @@ table {
 }
 
 @keyframes bounceIn{
-  0%{
+  0% {
     opacity: 0;
     transform: scale(0.3) translate3d(0,0,0);
   }
-  50%{
+  50% {
     opacity: 0.9;
     transform: scale(1.1);
   }
-  80%{
+  80% {
     opacity: 1;
     transform: scale(0.89);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: scale(1) translate3d(0,0,0);
   }
 }
 
-/*.example-enter {
+@keyframes bounceOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+	80% {
+		opacity: 1;
+		transform: scale(0.89);
+	}
+  100% {
+    transform: scale(0);
+  }
+}
+
+.example-enter {
   opacity: 0.01;
-  transition: opacity .5s ease-in;
+  transition: opacity .2s ease-in;
 }
 
 .example-enter.example-enter-active {
@@ -558,12 +591,12 @@ table {
 
 .example-appear {
   opacity: 0.01;
-  transition: opacity 1s ease-in;
+  transition: opacity 0.5s ease-in;
 }
 
 .example-appear.example-appear-active {
   opacity: 1;
-}*/
+}
 /*-----------Single Content-----------*/
 
 .gag {
