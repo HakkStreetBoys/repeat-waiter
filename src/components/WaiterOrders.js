@@ -114,14 +114,24 @@ class WaiterOrders extends Component {
 					transitionAppearTimeout={700}
 					transitionEnter={false}
 					transitionLeave={true}
+					transitionLeaveTimeout={9000}
 					className="button-row"
 					component="ul"
 				>
 					<div className="orders">
-						<ul className="orders__list">
+						<ReactCSSTransitionGroup
+							transitionName="bounce"
+							transitionAppear={true}
+							transitionAppearTimeout={700}
+							transitionEnter={true}
+							transitionLeave={true}
+							transitionLeaveTimeout={9000}
+							className={'orders__list'}
+							component="ul"
+						>
 							{this.renderOrder()}
 
-						</ul>
+						</ReactCSSTransitionGroup>
 					</div>
 				</ReactCSSTransitionGroup>
 			</div>

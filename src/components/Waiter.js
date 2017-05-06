@@ -28,15 +28,6 @@ const Waiter = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 	)
 	return (
 		<li className={'orders__items' + cName}>
-			<ReactCSSTransitionGroup
-				transitionName="bounce"
-				transitionAppear={true}
-				transitionAppearTimeout={700}
-				transitionEnter={true}
-				transitionLeave={true}
-				className="button-row"
-				component="ul"
-			>
 				<div className="orders__container">
 					<Button
 						status_item={status_item}
@@ -71,7 +62,6 @@ const Waiter = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 						</div>
 					</div>
 				</div>
-			</ReactCSSTransitionGroup>
 		</li>
 	)
 }

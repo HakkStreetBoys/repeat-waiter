@@ -39,6 +39,7 @@ const Table = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 				transitionAppearTimeout={700}
 				transitionEnter={true}
 				transitionLeave={true}
+				transitionLeaveTimeout={700}
 				className="button-row"
 				component="ul"
 			>

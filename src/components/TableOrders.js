@@ -102,6 +102,7 @@ class TableOrders extends Component {
 					transitionAppearTimeout={700}
 					transitionEnter={false}
 					transitionLeave={true}
+					transitionLeaveTimeout={700}
 					className="button-row"
 					component="ul"
 				>

@@ -536,6 +536,17 @@ table {
   }
 }
 
+.bounce-leave {
+  transform: translateX(0);
+}
+
+/* end leave state */
+.bounce-leave.bounce-leave-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: .4s cubic-bezier(0.52, -0.37, 0.13, 1.22)
+}
+
 /*.example-enter {
   opacity: 0.01;
   transition: opacity .5s ease-in;
