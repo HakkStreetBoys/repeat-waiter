@@ -32,33 +32,23 @@ class Delete extends Component {
 		})
 	}
 
-	modal = () => {
-		console.log('hello')
-		return <div />
-	}
-
 	render() {
-		console.log(this.state)
+    const statusPay = ['unpayd-border', 'payd-border']
+  	const cName = ' ' + statusPay[this.props.status_pay]
 		return (
 			<div>
         {!this.state.modal &&
-				<div className={'orders__delete'} onClick={this.toggle}>
+				<div className={'orders__delete modal__button' + cName} onClick={this.toggle}>
           Eyða
         </div>
       }
 				{this.state.modal &&
 					<div className="modal">
-						<div className="modal__heading">
-							Ertu allveg viss að þú viljir eyða þessari pönntun?
-						</div>
 						<div
-							className="modal__button button-yes"
+							className="modal__button button-delete"
 							onClick={this.firebaseDelete.bind(this)}
 						>
-							Já
-						</div>
-						<div className="modal__button button-no" onClick={this.toggle}>
-							Nei
+							SMELLTU TIL AÐ EYÐA
 						</div>
 					</div>}
 			</div>

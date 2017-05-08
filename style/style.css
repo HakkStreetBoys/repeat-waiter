@@ -28,6 +28,8 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	font-family: canada-type-gibson;
+	font-weight: 400;
+	color: #343845;
 }
 ol, ul {
 	list-style: none;
@@ -66,9 +68,10 @@ table {
   border-radius: 10px;
 	width: 110px;
 	height: 25px;
-	line-height: 20px;
+	line-height: 25px;
   text-align: center;
   text-transform: uppercase;
+	cursor: pointer;
 }
 
 .in-prosess {
@@ -379,12 +382,15 @@ table {
 }
 
 .orders__items {
-	width: 21.8%;
+	width: 21.5%;
 	height: 100%;
 	margin: 20px;
 	border: 1px solid #E6E8EB;
 	border-radius: 10px;
-	padding: 20px;
+}
+
+.orders__container {
+	margin: 20px;
 }
 
 .unpayd {
@@ -479,17 +485,6 @@ table {
 .orders__title {
 	font-size: 16px;
 	line-height: 30px;
-}
-
-.orders__delete {
-	width: 47%;
-	height: 40px;
-	bottom: 0;
-	text-align: center;
-	line-height: 40px;
-	border: 1px solid #000;
-	border-radius: 5px;
-	cursor: pointer;
 }
 
 .bounce-enter {
@@ -690,21 +685,55 @@ table {
 }
 
 .modal__button {
-	width: 47%;
 	height: 40px;
 	position: relative;
 	bottom: 0;
 	text-align: center;
 	line-height: 40px;
-	border: 1px solid #000;
-	border-radius: 5px;
+	border-top: 1px solid #000;
 	cursor: pointer;
 }
 
-.button-yes {
-	float: right;
+.modal__button:hover {
+	background-color: #EAEBED;
 }
 
-.button-no {
+.orders__delete {
+	width: 50%;
+	float: right;
+	border-radius: 0 0 10px 0;
+}
+
+.orders__edit {
+	width: calc(50% - 1px);
 	float: left;
+	border-right: 1px solid #000;
+	border-radius: 0 0 0 10px;
+}
+
+.button-delete {
+	width: 100%;
+	position: absolute;
+	border: none;
+	border-radius: none;
+	color: #fff;
+	background-color: #FF5A5f;
+	float: right;
+	border-radius: 0 0 10px 10px;
+}
+
+.button-delete:hover {
+	background-color: #FF4046;
+}
+
+.button-edit {
+	float: left;
+}
+
+.payd-border {
+	border-color: #50E3C2;
+}
+
+.unpayd-border {
+	border-color: #FFB1BA;
 }
