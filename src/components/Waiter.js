@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import Button from './Button'
+import Delete from './Delete'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 const getStatus = status_item => {
@@ -59,6 +60,11 @@ const Waiter = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 					key2={key2}
 					key3={key3}
 				/>
+			<Delete
+				key1={key1}
+				key2={key2}
+				key3={key3}
+			 />
 				<div className="orders__item">
 					<div className="orders__table_number">
 						Borð {table_number}

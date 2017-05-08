@@ -49,7 +49,7 @@ class TableOrders extends Component {
 					}
 					if (drinks.length > 0) {
 						return {
-							timeStamp: item.createdAt,
+							tableNumber: item.table_number,
 							waiter: (
 								<Table
 									key={i}
@@ -86,7 +86,7 @@ class TableOrders extends Component {
 			}
 		})
 		all_waiters.sort((a, b) => {
-			return a.timeStamp - b.timeStamp
+			return a.tableNumber - b.tableNumber
 		})
 		all_waiters = all_waiters.map(waiter => waiter.waiter)
 		return all_waiters
