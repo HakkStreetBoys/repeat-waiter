@@ -27,6 +27,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	font-family: canada-type-gibson;
 }
 ol, ul {
 	list-style: none;
@@ -459,6 +460,7 @@ table {
 	text-align: center;
 	float: left;
 	color: #000;
+	line-height: 25px;
 }
 
 .orders__phone {
@@ -477,6 +479,17 @@ table {
 .orders__title {
 	font-size: 16px;
 	line-height: 30px;
+}
+
+.orders__delete {
+	width: 47%;
+	height: 40px;
+	bottom: 0;
+	text-align: center;
+	line-height: 40px;
+	border: 1px solid #000;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .bounce-enter {
@@ -660,4 +673,38 @@ table {
 	margin-top: 80px;
 	padding-left: 20px;
 	width: 100%;
+}
+
+/*-------- Modal -----------*/
+
+.modal {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 2;
+	margin-top: 25px;
+}
+
+.modal__heading {
+	padding: 20px 0;
+}
+
+.modal__button {
+	width: 47%;
+	height: 40px;
+	position: relative;
+	bottom: 0;
+	text-align: center;
+	line-height: 40px;
+	border: 1px solid #000;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.button-yes {
+	float: right;
+}
+
+.button-no {
+	float: left;
 }

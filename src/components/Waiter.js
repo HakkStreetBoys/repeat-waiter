@@ -60,11 +60,6 @@ const Waiter = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 					key2={key2}
 					key3={key3}
 				/>
-			<Delete
-				key1={key1}
-				key2={key2}
-				key3={key3}
-			 />
 				<div className="orders__item">
 					<div className="orders__table_number">
 						Borð {table_number}
@@ -74,6 +69,11 @@ const Waiter = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 						{totalPrice} kr.
 					</div>
 				</div>
+				<Delete
+					key1={key1}
+					key2={key2}
+					key3={key3}
+				 />
 			</div>
 		</ReactCSSTransitionGroup>
 	)
