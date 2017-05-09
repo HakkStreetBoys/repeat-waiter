@@ -83,13 +83,14 @@ class Delete extends Component {
     "clientX: " + event.clientX +
     " - clientY: " + event.clientY
     console.log('flehhh', coordinates );
+
   }
 
 	render() {
 		const statusPay = ['unpayd-border', 'payd-border']
 		const cName = ' ' + statusPay[this.props.status_pay]
 		return (
-			<div>
+			<div className="modal__container">
 					<div className="orders__info" onClick={(event) => { this.toggle(); this.getMousePos(event);}} />
 				{this.state.modal &&
 					<div className="modal">

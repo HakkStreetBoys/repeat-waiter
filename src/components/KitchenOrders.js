@@ -41,7 +41,7 @@ class KitchenOrders extends Component {
 					for (let product in order) {
 						item = order[product]
 						item2 = _.keys(order)
-						if (item.category === 'matur' && item.status_item !== '2') {
+						if (item.category === 'matur' && item.status_item !== 2) {
 							drinks.push(item)
 						}
 					}
