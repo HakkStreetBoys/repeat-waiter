@@ -25,7 +25,6 @@ state = {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <div className="header">

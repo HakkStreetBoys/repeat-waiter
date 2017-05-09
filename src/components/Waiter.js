@@ -13,7 +13,7 @@ const getStatus = status_item => {
 let checkOld = {}
 checkOld.className = ''
 
-const Waiter = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
+const Waiter = ({ theOrder, onOrdersSelect, active, key1, key2, key3, button_type }) => {
 	const {
 		title,
 		table_number,
@@ -23,8 +23,10 @@ const Waiter = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 		price,
 		userID,
 	} = theOrder[0]
-	const status = ['unpayd', 'payd']
+	const status = ['unpayd', 'payd', 'unpayd']
+	const statusRejected = ['','','Greiðslu hafnað!']
 	const cName = ' ' + status[status_pay]
+	const bName = statusRejected[status_pay]
 	let totalPrice = 0
 	const allTitle = theOrder.map(oneOrder => {
 		totalPrice += parseInt(oneOrder.price)
@@ -55,25 +57,29 @@ const Waiter = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 			component="li"
 		>
 			<div className="orders__container">
+				{/* {this.state.modal && <Delete />} */}
+				<Delete />
+				<div className="orders__rejected">{bName}</div>
 				<Button
+					button_type={button_type}
 					status_item={status_item}
 					getStatus={getStatus}
 					key1={key1}
 					key2={key2}
 					key3={key3}
 				/>
-				<div className="orders__price">
-					{totalPrice} kr.
-				</div>
 				<div className="orders__item">
 					<div className="orders__table_number">
 						Borð {table_number}
 					</div>
 					{allTitle}
+					<div className="orders__price">
+						{totalPrice} kr.
+					</div>
 				</div>
 			</div>
-			<Delete status_pay={status_pay} key1={key1} key2={key2} key3={key3} />
-			<Edit status_pay={status_pay} key1={key1} key2={key2} key3={key3} />
+			{/* <Delete status_pay={status_pay} key1={key1} key2={key2} key3={key3} />
+			<Edit status_pay={status_pay} key1={key1} key2={key2} key3={key3} /> */}
 
 		</ReactCSSTransitionGroup>
 	)

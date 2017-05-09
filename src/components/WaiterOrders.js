@@ -56,6 +56,7 @@ class WaiterOrders extends Component {
 							timeStamp: item.createdAt,
 							waiter: (
 								<Waiter
+									button_type="drykkur"
 									key={i}
 									key1={i}
 									key2={i2}
@@ -76,14 +77,12 @@ class WaiterOrders extends Component {
 				})
 			}
 		})
-		console.log('1ordermap', orderMap)
 		const user_orders = orderMap.map(item => {
 			if (item) {
 				const items = item.filter(i => typeof i != 'undefined')
 				return items
 			}
 		})
-		console.log('user_orders', user_orders)
 		let all_waiters = []
 		user_orders.forEach(orders => {
 			if (orders) {
@@ -92,11 +91,9 @@ class WaiterOrders extends Component {
 				})
 			}
 		})
-		console.log('all_waiters', all_waiters)
 		all_waiters.sort((a, b) => {
 			return a.timeStamp - b.timeStamp
 		})
-		console.log('2all_waiters', all_waiters)
 		all_waiters = all_waiters.map(waiter => waiter.waiter)
 		return all_waiters
 	}

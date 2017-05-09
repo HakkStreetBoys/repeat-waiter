@@ -53,6 +53,7 @@ class KitchenOrders extends Component {
 							timeStamp: item.createdAt,
 							waiter: (
 								<Waiter
+									button_type="matur"
 									key={i}
 									key1={i}
 									key2={i2}

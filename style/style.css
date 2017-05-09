@@ -97,11 +97,12 @@ table {
 
 .spinner {
 	width: 100%;
-  position: absolute;
-  top: calc(100vh - 45%);
-  display: flex;
-  justify-content: center;
-  z-index: 9999;
+	height: 100%;
+	position: relative;
+	margin-top: calc(100vh - 45%);
+	display: flex;
+	justify-content: center;
+	z-index: 9999;
 }
 
 .spinner img:nth-child(1) {
@@ -390,15 +391,21 @@ table {
 }
 
 .orders__container {
-	margin: 20px;
+	margin: 10px 20px 20px 20px;
 }
 
 .unpayd {
-	border: 1px solid #FFB1BA;
+	border: 1px solid #FFB700;
 }
 
 .payd {
 	border: 1px solid #50E3C2;
+}
+
+.orders__rejected {
+	color: #FF5A5F;
+	font-size: 12px;
+	font-weight: 600;
 }
 
 .orders__item {
@@ -443,6 +450,14 @@ table {
   margin: 17.5px 100px 0 0;
 }
 
+.orders__info {
+	position: relative;
+	float: right;
+	height: 20px;
+	width: 20px;
+	background: url('../src/icons/info.svg') no-repeat center center;
+}
+
 .orders__payment-container {
 	position: relative;
 	white-space: nowrap;
@@ -478,6 +493,7 @@ table {
 
 .orders__price {
 	padding: 5px 0px 0px 37px;
+	margin-bottom: 20px;
 	float: right;
 	color: #A9A9A9;
 }
@@ -673,67 +689,37 @@ table {
 /*-------- Modal -----------*/
 
 .modal {
-	width: 100%;
-	height: 100%;
-	position: relative;
+	width: 120px;
+	height: 100px;
+	position: absolute;
 	z-index: 2;
-	margin-top: 25px;
+	left: 50%;
+	border-radius: 10px;
+	background-color: #343845;
 }
 
-.modal__heading {
-	padding: 20px 0;
+.modal__exit {
+	height: 20px;
+	width: 20px;
+	background: url('../src/icons/cancel.svg') no-repeat center center;
 }
 
 .modal__button {
-	height: 40px;
-	position: relative;
-	bottom: 0;
+	height: 30px;
+	width: 80px;
 	text-align: center;
-	line-height: 40px;
-	border-top: 1px solid #000;
+	line-height: 30px;
 	cursor: pointer;
-}
-
-.modal__button:hover {
-	background-color: #EAEBED;
+	background-color: #fff;
+	margin: auto;
+	margin-top: 15px;
+	border-radius: 10px;
 }
 
 .orders__delete {
-	width: 50%;
-	float: right;
-	border-radius: 0 0 10px 0;
+
 }
 
 .orders__edit {
-	width: calc(50% - 1px);
-	float: left;
-	border-right: 1px solid #000;
-	border-radius: 0 0 0 10px;
-}
 
-.button-delete {
-	width: 100%;
-	position: absolute;
-	border: none;
-	border-radius: none;
-	color: #fff;
-	background-color: #FF5A5f;
-	float: right;
-	border-radius: 0 0 10px 10px;
-}
-
-.button-delete:hover {
-	background-color: #FF4046;
-}
-
-.button-edit {
-	float: left;
-}
-
-.payd-border {
-	border-color: #50E3C2;
-}
-
-.unpayd-border {
-	border-color: #FFB1BA;
 }
