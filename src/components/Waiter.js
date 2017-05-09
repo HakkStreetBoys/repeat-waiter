@@ -1,27 +1,17 @@
-import React from 'react'
+import React, { Radix } from 'react'
 import Button from './Button'
 import Delete from './Delete'
-import Edit from './Edit'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 const getStatus = status_item => {
 	// console.log( "inGetStatus ", status_item );
 }
 
-
-
-let checkOld = {}
-checkOld.className = ''
-
 const Waiter = ({ theOrder, onOrdersSelect, active, key1, key2, key3, button_type }) => {
 	const {
-		title,
 		table_number,
 		status_item,
-		quantity,
 		status_pay,
-		price,
-		userID,
 	} = theOrder[0]
 	const status = ['unpayd', 'payd', 'unpayd']
 	const statusRejected = ['','','Greiðslu hafnað!']
@@ -29,7 +19,7 @@ const Waiter = ({ theOrder, onOrdersSelect, active, key1, key2, key3, button_typ
 	const bName = statusRejected[status_pay]
 	let totalPrice = 0
 	const allTitle = theOrder.map(oneOrder => {
-		totalPrice += parseInt(oneOrder.price)
+		totalPrice += parseInt(oneOrder.price, Radix)
 		return (
 			<div>
 				<ul className="orders__order">

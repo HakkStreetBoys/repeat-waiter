@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import firebase from './firebase'
 class Delete extends Component {
 	constructor(props) {

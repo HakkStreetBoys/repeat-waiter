@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import Waiter from './Waiter'
-import OrderDetail from './OrderDetail'
 import Spinner from './Spinner'
 import _ from 'lodash'
 import firebase from './firebase'

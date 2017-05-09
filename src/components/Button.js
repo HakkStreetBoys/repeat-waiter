@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import firebase from './firebase'
 class Button extends Component {
 	render() {
@@ -32,7 +31,7 @@ class Button extends Component {
 					'/' +
 					this.props.key3[keyStatus]
 			).once("value", snapshot => {
-				if(this.props.button_type == snapshot.val().category) {
+				if(this.props.button_type === snapshot.val().category) {
 				firebase
 					.database()
 					.ref(
