@@ -29,6 +29,7 @@ class WaiterOrders extends Component {
 		const { myOrders } = this.state
 		// console.log("what is myOrders", myOrders);
 		const orders = []
+		const numbers = []
 		let drinks = []
 		const orderMap = _.map(myOrders, (number, i2) => {
 			const user = number
@@ -44,7 +45,8 @@ class WaiterOrders extends Component {
 					for (let product in order) {
 						item = order[product]
 						item2 = _.keys(order)
-						if (item.category === 'drykkur' && item.status_item !== '2') {
+
+						if (item.category === 'drykkur' && item.status_item !== 2) {
 							drinks.push(item)
 						}
 					}

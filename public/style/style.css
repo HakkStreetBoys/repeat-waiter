@@ -383,9 +383,9 @@ table {
 }
 
 .orders__items {
-	width: 21.5%;
+	width: 22%;
 	height: 100%;
-	margin: 20px;
+	margin: 20px 1.4%;
 	border: 1px solid #E6E8EB;
 	border-radius: 10px;
 }
@@ -688,12 +688,17 @@ table {
 
 /*-------- Modal -----------*/
 
+.modal__container {
+	position: relative;
+}
+
 .modal {
 	width: 120px;
-	height: 100px;
+	height: 120px;
 	position: absolute;
 	z-index: 2;
 	left: 50%;
+	top: 0;
 	border-radius: 10px;
 	background-color: #343845;
 }
@@ -701,6 +706,8 @@ table {
 .modal__exit {
 	height: 20px;
 	width: 20px;
+	position: relative;
+	float: right;
 	background: url('../img/cancel.svg') no-repeat center center;
 }
 
@@ -722,4 +729,30 @@ table {
 
 .orders__edit {
 
+}
+
+/*--------Mediaqueries----------*/
+
+@media only screen and (max-width: 960px) {
+    /* For small screens */
+		.orders__items {
+			width: 30%;
+			margin: 20px 1.5%;
+		}
+}
+
+@media only screen and (max-width: 700px) {
+    /* For small screens */
+		.orders__items {
+			width: 45%;
+			margin: 20px 2.2%;
+		}
+}
+
+@media only screen and (max-width: 427px) {
+     /* For small screens */
+		.orders__items {
+			width: 90%;
+			margin: 20px 4.7%;
+		}
 }

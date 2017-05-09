@@ -40,7 +40,7 @@ class CompleteOrders extends Component {
 					for (let product in order) {
 						item = order[product]
 						item2 = _.keys(order)
-						if (item.status_item === '2') {
+						if (item.status_item === 2) {
 							drinks.push(item)
 						}
 					}
