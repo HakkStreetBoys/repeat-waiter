@@ -7,7 +7,6 @@ import KitchenOrders from './components/KitchenOrders';
 import CompleteOrders from './components/CompleteOrders';
 import TableOrders from './components/TableOrders';
 import NotFound from './components/NotFound';
-import OrderData from './OrderArr';
 
 export default (
 <Route path="/" component={App}>
