@@ -1,25 +1,19 @@
-import React from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import React, { Radix } from 'react'
 import Button from './Button'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 const Table = ({ theOrder, onOrdersSelect, active, key1, key2, key3 }) => {
 	const {
-		order_number,
-		title,
 		table_number,
 		status_item,
-		status_food,
 		status_pay,
-		quantity,
 		userID,
-		price,
 	} = theOrder[0]
 	const status = ['unpayd', 'payd']
 	const cName = ' ' + status[status_pay]
 	let totalPrice = 0
 	const allTitle = theOrder.map(oneOrder => {
-		totalPrice += parseInt(oneOrder.price)
+		totalPrice += parseInt(oneOrder.price, Radix)
 		return (
 			<li>
 				<div className="orders__circle">

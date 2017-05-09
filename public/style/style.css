@@ -184,7 +184,7 @@ table {
   width: 65px;
   height: 65px;
   margin: 7.5px 0 0 100px;
-  background: url('../src/images/logo.svg') no-repeat;
+  background: url('../img/logo.svg') no-repeat;
 }
 
 .nav__list-container ul {
@@ -232,39 +232,39 @@ table {
 }
 
 .nav__waiter {
-  background: url('../icons/drink.svg') no-repeat center center;
+  background: url('../img/drink.svg') no-repeat center center;
 }
 
 .nav__kitchen {
-  background: url('../icons/food.svg') no-repeat center center;
+  background: url('../img/food.svg') no-repeat center center;
 }
 
 .nav__table {
-  background: url('../icons/table2.svg') no-repeat center center;
+  background: url('../img/table2.svg') no-repeat center center;
 }
 
 .nav__done {
-  background: url('./src/icons/complete.svg') no-repeat center center;
+  background: url('../img/complete.svg') no-repeat center center;
 }
 
 .nav__list-container ul li a:hover > .nav__waiter,
 .WaiterLink.active .nav__waiter {
-	background: url('./src/icons/drinkwhite.svg') no-repeat center center;
+	background: url('../img/drinkwhite.svg') no-repeat center center;
 }
 
 .nav__list-container ul li a:hover > .nav__kitchen,
 .KitchenLink.active .nav__kitchen{
-	background: url('./src/icons/foodwhite.svg') no-repeat center center;
+	background: url('../img/foodwhite.svg') no-repeat center center;
 }
 
 .nav__list-container ul li a:hover > .nav__table,
 .TableLink.active .nav__table {
-	background: url('./src/icons/table2white.svg') no-repeat center center;
+	background: url('../img/table2white.svg') no-repeat center center;
 }
 
 .nav__list-container ul li a:hover > .nav__done,
 .DoneLink.active .nav__done {
-	background: url('./src/icons/completewhite.svg') no-repeat center center;
+	background: url('../img/completewhite.svg') no-repeat center center;
 }
 
 .active {
@@ -306,7 +306,7 @@ table {
   height: 24px;
   width: 24px;
   margin: 28px 0 0 20px;
-  background: url('../src/icons/sort-by-attributes.svg') no-repeat center center;
+  background: url('../img/sort-by-attributes.svg') no-repeat center center;
 }
 
 /*---------Content-----------*/
@@ -455,7 +455,7 @@ table {
 	float: right;
 	height: 20px;
 	width: 20px;
-	background: url('../src/icons/info.svg') no-repeat center center;
+	background: url('../img/info.svg') no-repeat center center;
 }
 
 .orders__payment-container {
@@ -701,7 +701,7 @@ table {
 .modal__exit {
 	height: 20px;
 	width: 20px;
-	background: url('../src/icons/cancel.svg') no-repeat center center;
+	background: url('../img/cancel.svg') no-repeat center center;
 }
 
 .modal__button {

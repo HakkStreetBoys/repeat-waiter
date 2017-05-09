@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link, Route } from 'react-router'
 import NavLink from './NavLink'
 
 const Header = () => {
