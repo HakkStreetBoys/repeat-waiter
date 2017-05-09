@@ -26,7 +26,6 @@ class CompleteOrders extends Component {
 
 	renderOrder = () => {
 		const { myOrders } = this.state
-		const numbers = []
 		const orders = []
 		let drinks = []
 		const orderMap = _.map(myOrders, (number, i2) => {
@@ -70,10 +69,12 @@ class CompleteOrders extends Component {
 			}
 		})
 		const user_orders = orderMap.map(item => {
+			const items = []
 			if (item) {
-				const items = item.filter(i => typeof i != 'undefined')
+				const items = item.filter(i => typeof i !== 'undefined')
 				return items
 			}
+			return items
 		})
 		let all_waiters = []
 		user_orders.forEach(orders => {
@@ -91,8 +92,7 @@ class CompleteOrders extends Component {
 	}
 
 	render() {
-		const { state } = this
-		if (this.state.loading == true) {
+		if (this.state.loading === true) {
 			return <Spinner />
 		}
 		return (

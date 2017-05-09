@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header'
-
 import firebase from "./firebase";
 
 const auth = firebase.auth();
-
-
 
 export default class App extends Component {
   constructor(props) {
@@ -16,7 +13,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-        firebase.auth()
+        auth
         .signInWithEmailAndPassword('palmimar@gmail.com', 'hackstreetboys')
         .catch(error => {
           this.setState({ errorMessage: error.message, isLoggingIn: false });

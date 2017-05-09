@@ -16,7 +16,6 @@ class WaiterOrders extends Component {
 	}
 
 	componentWillMount() {
-		var component = this
 		firebase.database().ref('users').on('value', snapshot => {
 			// console.log(snapshot.val());
 			this.setState({ myOrders: snapshot.val(), loading: false })
@@ -29,7 +28,6 @@ class WaiterOrders extends Component {
 	renderOrder = () => {
 		const { myOrders } = this.state
 		// console.log("what is myOrders", myOrders);
-		const numbers = []
 		const orders = []
 		let drinks = []
 		const orderMap = _.map(myOrders, (number, i2) => {
@@ -46,7 +44,7 @@ class WaiterOrders extends Component {
 					for (let product in order) {
 						item = order[product]
 						item2 = _.keys(order)
-						if (item.category == 'drykkur' && item.status_item != '2') {
+						if (item.category === 'drykkur' && item.status_item !== '2') {
 							drinks.push(item)
 						}
 					}
@@ -77,10 +75,12 @@ class WaiterOrders extends Component {
 			}
 		})
 		const user_orders = orderMap.map(item => {
+			const items = []
 			if (item) {
-				const items = item.filter(i => typeof i != 'undefined')
+				const items = item.filter(i => typeof i !== 'undefined')
 				return items
 			}
+			return items
 		})
 		let all_waiters = []
 		user_orders.forEach(orders => {
@@ -98,8 +98,7 @@ class WaiterOrders extends Component {
 	}
 
 	render() {
-		const { state } = this
-		if (this.state.loading == true) {
+		if (this.state.loading === true) {
 			return <Spinner />
 		}
 		return (
