@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import firebase from './firebase'
 class Button extends Component {
 	render() {
@@ -20,23 +19,37 @@ class Button extends Component {
 		if (temp < 2) {
 			temp = temp % 2 + 1
 		}
-    console.log('this.props.key3', this.props.key3);
+
 		for (let keyStatus in this.props.key3) {
 			firebase
-				.database()
-				.ref(
-					'users/' +
-						this.props.key2 +
-						'/confirmed_order/' +
-						this.props.key1 +
-						'/' +
-						this.props.key3[keyStatus]
-				)
-				.update({
-					status_item: temp,
-				})
-		}
+			.database()
+			.ref(
+				'users/' +
+					this.props.key2 +
+					'/confirmed_order/' +
+					this.props.key1 +
+					'/' +
+					this.props.key3[keyStatus]
+			).once("value", snapshot => {
+				if(this.props.button_type === snapshot.val().category) {
+				firebase
+					.database()
+					.ref(
+						'users/' +
+							this.props.key2 +
+							'/confirmed_order/' +
+							this.props.key1 +
+							'/' +
+							this.props.key3[keyStatus]
+					)
+					.update({
+						status_item: temp,
+					})
+			}
+			})
 	}
+}
+
 }
 
 export default Button

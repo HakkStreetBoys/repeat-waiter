@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-
+import Spinner from './Spinner'
 import Table from './Table'
-import OrderDetail from './OrderDetail'
 import _ from 'lodash'
 import firebase from './firebase'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
@@ -16,8 +15,6 @@ class CompleteOrders extends Component {
 	}
 
 	componentWillMount() {
-		var component = this
-
 		firebase.database().ref('users').on('value', snapshot => {
 			console.log(snapshot.val())
 			this.setState({ myOrders: snapshot.val(), loading: false })
@@ -44,7 +41,7 @@ class CompleteOrders extends Component {
 					for (let product in order) {
 						item = order[product]
 						item2 = _.keys(order)
-						if (item.status_item == '2') {
+						if (item.status_item === '2') {
 							drinks.push(item)
 						}
 					}
@@ -95,23 +92,26 @@ class CompleteOrders extends Component {
 
 	render() {
 		const { state } = this
+		if (this.state.loading == true) {
+			return <Spinner />
+		}
 		return (
 			<div className="gag">
-					<div className="orders">
-						<ReactCSSTransitionGroup
-							transitionName="bounce"
-							transitionAppear={false}
-							transitionAppearTimeout={700}
-							transitionEnter={false}
-							transitionEnterTimeout={700}
-							transitionLeave={true}
-							transitionLeaveTimeout={700}
-							className="orders__list"
-							component="ul"
-						>
-							{this.renderOrder()}
-						</ReactCSSTransitionGroup>
-					</div>
+				<div className="orders">
+					<ReactCSSTransitionGroup
+						transitionName="bounce"
+						transitionAppear={false}
+						transitionAppearTimeout={700}
+						transitionEnter={false}
+						transitionEnterTimeout={700}
+						transitionLeave={true}
+						transitionLeaveTimeout={700}
+						className="orders__list"
+						component="ul"
+					>
+						{this.renderOrder()}
+					</ReactCSSTransitionGroup>
+				</div>
 			</div>
 		)
 	}

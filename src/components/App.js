@@ -8,16 +8,18 @@ const auth = firebase.auth();
 
 
 export default class App extends Component {
-
-state = {
-  user: undefined
-};
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: undefined
+    };
+  }
 
   componentDidMount() {
         firebase.auth()
         .signInWithEmailAndPassword('palmimar@gmail.com', 'hackstreetboys')
         .catch(error => {
-          this.setState({ errorMessage: error.message, isLoggingIn: false, user: user });
+          this.setState({ errorMessage: error.message, isLoggingIn: false });
       });
         firebase.auth().onAuthStateChanged(user => {
         this.setState({ user });
@@ -25,7 +27,6 @@ state = {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <div className="header">

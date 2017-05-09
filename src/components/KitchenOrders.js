@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-
+import Spinner from './Spinner'
 import Waiter from './Waiter'
-import OrderDetail from './OrderDetail'
 import _ from 'lodash'
 import firebase from './firebase'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
@@ -16,7 +15,6 @@ class KitchenOrders extends Component {
 	}
 
 	componentWillMount() {
-		var component = this
 		firebase.database().ref('users').on('value', snapshot => {
 			console.log(snapshot.val())
 			this.setState({ myOrders: snapshot.val(), loading: false })
@@ -29,7 +27,6 @@ class KitchenOrders extends Component {
 
 	renderOrder = () => {
 		const { myOrders } = this.state
-		const numbers = []
 		const orders = []
 		let drinks = []
 		const orderMap = _.map(myOrders, (number, i2) => {
@@ -44,7 +41,7 @@ class KitchenOrders extends Component {
 					for (let product in order) {
 						item = order[product]
 						item2 = _.keys(order)
-						if (item.category == 'matur' && item.status_item != '2') {
+						if (item.category === 'matur' && item.status_item !== '2') {
 							drinks.push(item)
 						}
 					}
@@ -53,6 +50,7 @@ class KitchenOrders extends Component {
 							timeStamp: item.createdAt,
 							waiter: (
 								<Waiter
+									button_type="matur"
 									key={i}
 									key1={i}
 									key2={i2}
@@ -74,9 +72,10 @@ class KitchenOrders extends Component {
 		})
 		const user_orders = orderMap.map(item => {
 			if (item) {
-				const items = item.filter(i => typeof i != 'undefined')
+				const items = item.filter(i => typeof i !== 'undefined')
 				return items
 			}
+			return item
 		})
 		let all_waiters = []
 		user_orders.forEach(orders => {
@@ -94,7 +93,9 @@ class KitchenOrders extends Component {
 	}
 
 	render() {
-		const { state } = this
+		if (this.state.loading === true) {
+			return <Spinner />
+		}
 		return (
 			<div className="gag">
 					<div className="orders">
