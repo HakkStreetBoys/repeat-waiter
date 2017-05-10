@@ -94,8 +94,7 @@ table {
 
 .spinner {
   width: 100%;
-  height: 100%;
-  position: relative;
+  position: absolute;
   margin-top: calc(100vh - 45%);
   display: flex;
   justify-content: center;
@@ -127,40 +126,31 @@ table {
 /*---------404page-----------*/
 
 .not_found {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	display: flex;
-	justify-content: center;
-	background: #fff;
-	z-index: 9999;
-	color: white;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  z-index: 9999;
 }
 
 .not-found__container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
 }
 
+.not-found__container img {
+  width: 500px;
+  height: 500px;
+}
+
 .not_found h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-  margin-left: 65px;
-}
-
-.not_found .not_found_emoji {
   font-size: 100px;
-  margin-left: 15px;
-}
-
-.not_found p {
-  margin-left: 15px;
-}
-
-.not_found__button-container a {
-  margin-right: 10px;
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -204,16 +194,16 @@ table {
   display: block;
   color: #9B9B9B;
   text-align: center;
-  padding-bottom:15px;
+  padding-bottom: 15px;
   text-decoration: none;
   font-family: canada-type-gibson;
   font-weight: 300;
   letter-spacing: 0.07em;
   font-size: 20px;
   border-radius: 0 0 10px 10px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .nav__list-container ul li a:hover {
@@ -236,7 +226,7 @@ table {
 .nav__waiter, .nav__kitchen, .nav__table, .nav__done {
   position: relative;
   height: 60px;
-	width: 100%;
+  width: 100%;
 }
 
 .nav__waiter {
@@ -281,7 +271,7 @@ table {
   background-color: #343845;
   color: #fff;
   fill: #fff;
-	font-weight: 400;
+  font-weight: 400;
 }
 
 
@@ -318,9 +308,8 @@ table {
 /*---------Content-----------*/
 
 .content {
-  height: 100%;
   width: 100%;
-	position: relative;
+  position: relative;
 }
 
 .content-left {
@@ -405,7 +394,7 @@ table {
   color: #FF5A5F;
   font-size: 12px;
   font-weight: 600;
-	margin-top: 18px;
+  margin-top: 18px;
 }
 
 .orders__item {
@@ -436,14 +425,13 @@ table {
 }
 
 .orders__table_number span {
-	font-weight: 400;
-	font-size: 14px;
-	color: #A9A9A9;
-	margin-left: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #A9A9A9;
+  margin-left: 10px;
 }
 
-.orders__table_number,
-.orders__order {
+.orders__table_number, .orders__order {
   position: relative;
   white-space: nowrap;
   clear: both;
@@ -463,19 +451,19 @@ table {
   float: right;
   height: 20px;
   width: 20px;
-	margin-top: 10px;
-	background-color: rebeccapurple;
-	-webkit-mask-image: url('../img/close1.svg');
+  margin-top: 10px;
+  background-color: rebeccapurple;
+  -webkit-mask-image: url('../img/close1.svg');
   mask-image: url('../img/close1.svg');
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .unpayd {
-	background-color: #FF5A5F;
+  background-color: #FF5A5F;
 }
 
 .payd {
-	background-color: #E6E8EB;
+  background-color: #E6E8EB;
 }
 
 .orders__payment-container {
@@ -521,6 +509,8 @@ table {
   line-height: 25px;
 }
 
+/*-------- Animation -----------*/
+
 .bounce-enter {
   font-size: 12px;
   transition: font-size 1s ease;
@@ -543,9 +533,6 @@ table {
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
-
-
-/*end leave state */
 
 .bounce-leave.bounce-leave-active {
   transform: translateX(100%);
@@ -686,7 +673,6 @@ table {
   width: 100%;
 }
 
-
 /*-------- Modal -----------*/
 
 .modal__container {
@@ -711,11 +697,11 @@ table {
 }
 
 .modal__exit {
-	height: 10px;
-	width: 10px;
-	position: relative;
-	float: right;
-	right: -10px;
+  height: 10px;
+  width: 10px;
+  position: relative;
+  float: right;
+  right: -10px;
   cursor: pointer;
   margin: 10px 20px 0 0;
   background: url('../img/cancel.svg') no-repeat center center;
