@@ -168,15 +168,6 @@ table {
   width: 100%;
 }
 
-.nav__logo {
-  position: relative;
-  float: right;
-  width: 65px;
-  height: 65px;
-  margin: 7.5px 0 0 100px;
-  background: url('../img/logo.svg') no-repeat;
-}
-
 .nav__list-container ul {
   list-style-type: none;
   margin-left: 20px;
@@ -230,7 +221,7 @@ table {
 }
 
 .nav__waiter {
-  background: url('../img/drink.svg') no-repeat center center;
+  background: url('../img/drinks.svg') no-repeat center center;
 }
 
 .nav__kitchen {
