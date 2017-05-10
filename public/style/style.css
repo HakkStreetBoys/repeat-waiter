@@ -1,90 +1,86 @@
 /*---------CSS RESET-----------*/
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-	font-family: canada-type-gibson;
-	font-weight: 400;
-	color: #343845;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-.root {
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-family: canada-type-gibson;
+  font-weight: 400;
+  color: #343845;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#root {
   max-width: 1440px;
   width: 100%;
   margin: auto;
 }
 
+
 /*---------Buttons-----------*/
 
 .button {
-	display: inline-block;
-	position: relative;
-	padding: 2px;
-	margin: 15px 0 5px 0;
-	border: none;
+  display: inline-block;
+  position: relative;
+  padding: 2px;
+  margin: 10px 0 5px 0;
+  border: none;
   font-family: canada-type-gibson;
   font-size: 14px;
   background-color: #1491f1;
   color: #fff;
   border-radius: 10px;
-	width: 110px;
-	height: 25px;
-	line-height: 25px;
+  width: 110px;
+  height: 25px;
+  line-height: 25px;
   text-align: center;
   text-transform: uppercase;
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .in-prosess {
-	background-color: #f1c014;
+  background-color: #ffb700;
 }
 
 .complete {
-	background-color: #5a9251;
+  background-color: #5a9251;
 }
 
 .float-left {
-	float: left;
+  float: left;
 }
+
 
 /*---------Fonts-----------*/
 
@@ -93,16 +89,17 @@ table {
   font-weight: 300;
 }
 
+
 /*---------Spinner-----------*/
 
 .spinner {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	margin-top: calc(100vh - 45%);
-	display: flex;
-	justify-content: center;
-	z-index: 9999;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin-top: calc(100vh - 45%);
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
 }
 
 .spinner img:nth-child(1) {
@@ -111,10 +108,10 @@ table {
 }
 
 .spinner img:nth-child(2) {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @keyframes rotate {
@@ -125,10 +122,12 @@ table {
     transform: rotate(360deg)
   }
 }
+
+
 /*---------404page-----------*/
 
 .not_found {
-	width: 100%;
+  width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -136,33 +135,34 @@ table {
   justify-content: center;
   background: #343845;
   z-index: 9999;
-	color: white;
+  color: white;
 }
 
 .not-found__container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .not_found h1 {
   font-size: 42px;
   margin-bottom: 10px;
-	margin-left: 65px;
+  margin-left: 65px;
 }
 
 .not_found .not_found_emoji {
   font-size: 100px;
-	margin-left: 15px;
+  margin-left: 15px;
 }
 
 .not_found p {
-	margin-left: 15px;
+  margin-left: 15px;
 }
 
 .not_found__button-container a {
-	margin-right: 10px;
+  margin-right: 10px;
 }
+
 
 /*---------Header-----------*/
 
@@ -188,47 +188,55 @@ table {
 }
 
 .nav__list-container ul {
-    list-style-type: none;
-    margin-left: 20px;
-    overflow: hidden;
+  list-style-type: none;
+  margin-left: 20px;
+  overflow: hidden;
 }
 
 .nav__list-container ul li {
-    float: left;
-		height: 164px;
-		width: 100px;
+  float: left;
+  height: 164px;
+  width: 100px;
+  margin-right: 15px;
 }
 
 .nav__list-container ul li a {
-    display: block;
-    color: #9B9B9B;
-    text-align: center;
-    padding: 14px 18px 5px 18px;
-    text-decoration: none;
-    font-family: canada-type-gibson;
-		font-weight: 400;
-    font-size: 20px;
-		border-radius: 0 0 10px 10px;
+  display: block;
+  color: #9B9B9B;
+  text-align: center;
+  padding-bottom:15px;
+  text-decoration: none;
+  font-family: canada-type-gibson;
+  font-weight: 300;
+  letter-spacing: 0.07em;
+  font-size: 20px;
+  border-radius: 0 0 10px 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .nav__list-container ul li a:hover {
-    background-color: #343845;
-		color: #fff;
-		font-weight: 600;
-		fill: #fff;
+  background-color: #343845;
+  color: #fff;
+  font-weight: 400;
+  fill: #fff;
 }
 
 .nav__list-container ul li a:active {
-    background-color: #343845;
+  background-color: #343845;
 }
 
-.nav__waiter,
-.nav__kitchen,
-.nav__table,
-.nav__done {
+.nav__list-container ul li a div {
+  position: relative;
+  bottom: 0;
+  padding: 10px 0;
+}
+
+.nav__waiter, .nav__kitchen, .nav__table, .nav__done {
   position: relative;
   height: 60px;
-  width: 63px;
+	width: 100%;
 }
 
 .nav__waiter {
@@ -247,36 +255,33 @@ table {
   background: url('../img/complete.svg') no-repeat center center;
 }
 
-.nav__list-container ul li a:hover > .nav__waiter,
-.WaiterLink.active .nav__waiter {
-	background: url('../img/drinkwhite.svg') no-repeat center center;
+.nav__list-container ul li a:hover>.nav__waiter, .WaiterLink.active .nav__waiter {
+  background: url('../img/drinkwhite.svg') no-repeat center center;
 }
 
-.nav__list-container ul li a:hover > .nav__kitchen,
-.KitchenLink.active .nav__kitchen{
-	background: url('../img/foodwhite.svg') no-repeat center center;
+.nav__list-container ul li a:hover>.nav__kitchen, .KitchenLink.active .nav__kitchen {
+  background: url('../img/foodwhite.svg') no-repeat center center;
 }
 
-.nav__list-container ul li a:hover > .nav__table,
-.TableLink.active .nav__table {
-	background: url('../img/table2white.svg') no-repeat center center;
+.nav__list-container ul li a:hover>.nav__table, .TableLink.active .nav__table {
+  background: url('../img/table2white.svg') no-repeat center center;
 }
 
-.nav__list-container ul li a:hover > .nav__done,
-.DoneLink.active .nav__done {
-	background: url('../img/completewhite.svg') no-repeat center center;
+.nav__list-container ul li a:hover>.nav__done, .DoneLink.active .nav__done {
+  background: url('../img/completewhite.svg') no-repeat center center;
 }
 
 .active {
-	background-color: #343845;
-	color: #fff;
-	fill: #fff;
+  background-color: #343845;
+  color: #fff;
+  fill: #fff;
 }
 
 .nav__list-container ul li .active {
-	background-color: #343845;
-	color: #fff;
-	fill: #fff;
+  background-color: #343845;
+  color: #fff;
+  fill: #fff;
+	font-weight: 400;
 }
 
 
@@ -290,7 +295,7 @@ table {
   border-bottom: 1px solid #b7b7b7;
 }
 
-.nav__sub-header{
+.nav__sub-header {
   position: relative;
   float: left;
   margin: 0 0 0 30px;
@@ -309,11 +314,12 @@ table {
   background: url('../img/sort-by-attributes.svg') no-repeat center center;
 }
 
+
 /*---------Content-----------*/
 
 .content {
-	height: 100%;
-	width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .content-left {
@@ -322,7 +328,7 @@ table {
   width: 50%;
   height: calc(100vh - 180px);
   overflow: scroll;
-	border-right: 1px solid #b7b7b7;
+  border-right: 1px solid #b7b7b7;
 }
 
 .content-left__header {
@@ -337,18 +343,17 @@ table {
   border-bottom: 1px solid #b7b7b7;
 }
 
-.content-left__table-nr,
-.content-left__order-nr {
+.content-left__table-nr, .content-left__order-nr {
   position: relative;
   float: left;
 }
 
 .content-left__table-nr {
-	  margin-left: 10px;
+  margin-left: 10px;
 }
 
 .content-left__order-nr {
-	margin-left:50px;
+  margin-left: 50px;
 }
 
 .content-left__order-status {
@@ -364,6 +369,7 @@ table {
   height: calc(100vh - 180px);
 }
 
+
 /*---------Orders-----------*/
 
 .orders {
@@ -374,46 +380,39 @@ table {
 }
 
 .orders__list {
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	display: flex;
-	-webkit-flex-flow: row wrap;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .orders__items {
-	width: 22%;
-	height: 100%;
-	margin: 20px 1.4%;
-	border: 1px solid #E6E8EB;
-	border-radius: 10px;
+  width: 22%;
+  margin: 20px 1.4%;
+  border: 1px solid #E6E8EB;
+  border-radius: 5px;
 }
 
 .orders__container {
-	margin: 10px 20px 20px 20px;
-}
-
-.unpayd {
-	border: 1px solid #FFB700;
-}
-
-.payd {
-	border: 1px solid #50E3C2;
+  margin: 10px 20px 20px 20px;
 }
 
 .orders__rejected {
-	color: #FF5A5F;
-	font-size: 12px;
-	font-weight: 600;
+  color: #FF5A5F;
+  font-size: 12px;
+  font-weight: 600;
+	margin-top: 18px;
 }
 
 .orders__item {
-	margin: 15px 0px 0px 0px;
+  margin: 15px 0px 0px 0px;
 }
 
 .orders__container-clicked {
-	background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
 .orders__stripe {
@@ -423,25 +422,33 @@ table {
   height: 54px;
   width: 6px;
   background-color: #1491f1;
-	float: left;
-	margin: 0;
+  float: left;
+  margin: 0;
 }
 
 .orders__table_number {
-	font-family: canada-type-gibson;
-	font-size: 20px;
-	font-weight: 600;
-	text-align: left;
-	border-bottom: solid 1px #E6E8EB;
+  font-family: canada-type-gibson;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  border-bottom: solid 1px #E6E8EB;
+}
+
+.orders__table_number span {
+	font-weight: 400;
+	font-size: 14px;
+	color: #A9A9A9;
+	margin-left: 10px;
 }
 
 .orders__table_number,
 .orders__order {
   position: relative;
-	white-space: nowrap;
-	clear: both;
-	list-style: none;
-	margin: 0px 0px 10px;
+  white-space: nowrap;
+  clear: both;
+  list-style: none;
+  margin: 0px 0px 10px;
+  padding-bottom: 5px;
 }
 
 .orders__button {
@@ -451,105 +458,104 @@ table {
 }
 
 .orders__info {
-	position: relative;
-	float: right;
-	height: 20px;
-	width: 20px;
-	background: url('../img/info.svg') no-repeat center center;
+  position: relative;
+  float: right;
+  height: 20px;
+  width: 20px;
+	margin-top: 10px;
+	background-color: rebeccapurple;
+	-webkit-mask-image: url('../img/close1.svg');
+  mask-image: url('../img/close1.svg');
+	cursor: pointer;
+}
+
+.unpayd {
+	background-color: #FF5A5F;
+}
+
+.payd {
+	background-color: #E6E8EB;
 }
 
 .orders__payment-container {
-	position: relative;
-	white-space: nowrap;
-	margin-right: 20px;
+  position: relative;
+  white-space: nowrap;
+  margin-right: 20px;
 }
 
 .payment-status__img {
-	margin: 0 0 5px 10px;
+  margin: 0 0 5px 10px;
 }
 
 .orders__plus {
-	margin: 0 0 5px 10px;
+  margin: 0 0 5px 10px;
 }
 
 .orders__circle {
-	border-radius: 50%;
-	width: 25px;
-	height: 25px;
-	margin-right: 10px;
-	background: #E6E8EB;
-	text-align: center;
-	float: left;
-	color: #000;
-	line-height: 25px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  background: #E6E8EB;
+  text-align: center;
+  float: left;
+  color: #000;
+  line-height: 25px;
 }
 
-.orders__phone {
-	float: right;
-	margin: 15px 0px 0px 0px;
-	color: 	#A9A9A9;
-	font-size: 14px;
+.more-then-one {
+  background-color: #343845;
+  color: #fff;
 }
 
 .orders__price {
-	padding: 5px 0px 0px 37px;
-	margin-bottom: 20px;
-	float: right;
-	color: #A9A9A9;
+  padding: 5px 0 0 37px;
+  margin-bottom: 20px;
+  float: right;
+  color: #A9A9A9;
 }
 
 .orders__title {
-	font-size: 16px;
-	line-height: 30px;
+  font-size: 16px;
+  line-height: 25px;
 }
 
 .bounce-enter {
   font-size: 12px;
   transition: font-size 1s ease;
-	animation-name: bounceIn;
+  animation-name: bounceIn;
   animation-duration: 450ms;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
 
 .bounce-enter.bounce-enter-active {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 .bounce-leave {
   transform: translateX(0);
-	opacity: 0.01;
-  transition: opacity 1s ease;
-	animation-name: bounceOut;
+  opacity: 0.01;
+  transition: opacity .2s ease;
+  animation-name: bounceOut;
   animation-duration: 450ms;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
 
- /*end leave state */
+
+/*end leave state */
+
 .bounce-leave.bounce-leave-active {
   transform: translateX(100%);
   opacity: 0;
   transition: .4s cubic-bezier(0.52, -0.37, 0.13, 1.22)
 }
 
-/*.bounce-leave {
-  opacity: 1;
-  transition: opacity .5s ease;
-	animation-name: bounceOut;
-  animation-duration: 450ms;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-
-.bounce-leave.bounce-leave-active {
-  opacity: 0.01;
-}*/
-
 .bounce-appear {
   opacity: 0.01;
   transition: opacity 1s ease;
-	animation-name: bounceIn;
+  animation-name: bounceIn;
   animation-duration: 450ms;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
@@ -559,10 +565,10 @@ table {
   opacity: 1;
 }
 
-@keyframes bounceIn{
+@keyframes bounceIn {
   0% {
     opacity: 0;
-    transform: scale(0.3) translate3d(0,0,0);
+    transform: scale(0.3) translate3d(0, 0, 0);
   }
   50% {
     opacity: 0.9;
@@ -574,7 +580,7 @@ table {
   }
   100% {
     opacity: 1;
-    transform: scale(1) translate3d(0,0,0);
+    transform: scale(1) translate3d(0, 0, 0);
   }
 }
 
@@ -585,10 +591,10 @@ table {
   50% {
     transform: scale(1.5);
   }
-	80% {
-		opacity: 1;
-		transform: scale(0.89);
-	}
+  80% {
+    opacity: 1;
+    transform: scale(0.89);
+  }
   100% {
     transform: scale(0);
   }
@@ -621,138 +627,134 @@ table {
 .example-appear.example-appear-active {
   opacity: 1;
 }
+
+
 /*-----------Single Content-----------*/
 
 .gag {
-	width: 100%;
+  width: 100%;
 }
 
 .single-content {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	height: calc(100vh - 180px);
-	width: 50%;
-	background-color: #f9f9f9;
-	overflow: scroll;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: calc(100vh - 180px);
+  width: 50%;
+  background-color: #f9f9f9;
+  overflow: scroll;
 }
 
 .single-content__info {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 .single-content__costomer-info {
-	position: relative;
-	float: left;
-	width: 30%;
-	padding-left: 20px;
+  position: relative;
+  float: left;
+  width: 30%;
+  padding-left: 20px;
 }
 
 .single-content__costomer-container {
-	position: relative;
-	float: left;
+  position: relative;
+  float: left;
 }
 
-.single-content__costomer-title,
-.single-content__phone-title,
-.single-content__table-title,
-.single-content__order-title,
-.single-content__price-title {
-	font-size: 14px;
-	font-family: canada-type-gibson;
+.single-content__costomer-title, .single-content__phone-title, .single-content__table-title, .single-content__order-title, .single-content__price-title {
+  font-size: 14px;
+  font-family: canada-type-gibson;
 }
 
-.single-content__costomer-name,
-.single-content__phone-number,
-.single-content__table-number,
-.single-content__drinks,
-.single-content__food,
-.single-content__price-output {
-	font-size: 20px;
-	font-family: canada-type-gibson;
+.single-content__costomer-name, .single-content__phone-number, .single-content__table-number, .single-content__drinks, .single-content__food, .single-content__price-output {
+  font-size: 20px;
+  font-family: canada-type-gibson;
 }
 
 .single-content__table {
-	position: relative;
-	float: right;
-	width: 50%;
+  position: relative;
+  float: right;
+  width: 50%;
 }
 
 .single-content__order {
-	position: absolute;
-	float: left;
-	margin-top: 80px;
-	padding-left: 20px;
-	width: 100%;
+  position: absolute;
+  float: left;
+  margin-top: 80px;
+  padding-left: 20px;
+  width: 100%;
 }
+
 
 /*-------- Modal -----------*/
 
 .modal__container {
-	position: relative;
+  position: relative;
 }
 
 .modal {
-	width: 120px;
-	height: 120px;
-	position: absolute;
-	z-index: 2;
-	left: 50%;
-	top: 0;
-	border-radius: 10px;
-	background-color: #343845;
+  width: 140px;
+  height: 95px;
+  position: absolute;
+  z-index: 2;
+  right: -20px;
+  top: -10px;
+  font-size: 14px;
+  border-radius: 0 5px 0 0;
+  background-color: #343845;
+}
+
+.modal-enter {
+  font-size: 12px;
+  transition: opacity .5s ease-out;
 }
 
 .modal__exit {
-	height: 20px;
-	width: 20px;
+	height: 10px;
+	width: 10px;
 	position: relative;
 	float: right;
-	background: url('../img/cancel.svg') no-repeat center center;
+	right: -10px;
+  cursor: pointer;
+  margin: 10px 20px 0 0;
+  background: url('../img/cancel.svg') no-repeat center center;
 }
 
 .modal__button {
-	height: 30px;
-	width: 80px;
-	text-align: center;
-	line-height: 30px;
-	cursor: pointer;
-	background-color: #fff;
-	margin: auto;
-	margin-top: 15px;
-	border-radius: 10px;
+  height: 30px;
+  width: 100px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 55px;
+  border-radius: 10px;
 }
 
-.orders__delete {
-
-}
-
-.orders__edit {
-
-}
 
 /*--------Mediaqueries----------*/
 
 @media only screen and (max-width: 960px) {
-    /* For small screens */
-		.orders__items {
-			width: 30%;
-			margin: 20px 1.5%;
-		}
+  /* For small screens */
+  .orders__items {
+    width: 30%;
+    margin: 20px 1.5%;
+  }
 }
 
 @media only screen and (max-width: 700px) {
-    /* For small screens */
-		.orders__items {
-			width: 45%;
-			margin: 20px 2.2%;
-		}
+  /* For small screens */
+  .orders__items {
+    width: 45%;
+    margin: 20px 2.2%;
+  }
 }
 
 @media only screen and (max-width: 427px) {
-     /* For small screens */
-		.orders__items {
-			width: 90%;
-			margin: 20px 4.7%;
-		}
+  /* For small screens */
+  .orders__items {
+    width: 90%;
+    margin: 20px 4.7%;
+  }
 }

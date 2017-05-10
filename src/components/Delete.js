@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
 import firebase from './firebase'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 class Delete extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			modal: false,
-      delete: false,
-      edit: false,
 		}
 		this.toggle = this.toggle.bind(this)
-    this.toggleDelete = this.toggleDelete.bind(this)
-    this.toggleEdit = this.toggleEdit.bind(this)
 	}
 
 	firebaseDelete() {
@@ -29,108 +26,40 @@ class Delete extends Component {
 		}
 	}
 
-  firebaseEdit() {
-    for (let keyStatus in this.props.key3) {
-      firebase
-        .database()
-        .ref(
-          'users/' +
-            this.props.key2 +
-            '/confirmed_order/' +
-            this.props.key1 +
-            '/' +
-            this.props.key3[keyStatus]
-        )
-        .update({
-          status_item: this.props.status_item,
-          quantity: this.price.quantity,
-          price: this.props.price,
-          status_pay: this.props.status_pay,
-        });
-    }
-  }
-
 	toggle() {
 		this.setState({
 			modal: !this.state.modal,
 		})
-    if(this.state.delete) {
-      this.setState({
-        delete: !this.state.modal,
-      })
-    }
-    if(this.state.edit) {
-      this.setState({
-        edit: !this.state.modal,
-      })
-    }
 	}
-
-  toggleDelete() {
-		this.setState({
-			delete: !this.state.delete,
-		})
-	}
-
-  toggleEdit() {
-		this.setState({
-			edit: !this.state.edit,
-		})
-	}
-
-  getMousePos(event) {
-    let coordinates =
-    "clientX: " + event.clientX +
-    " - clientY: " + event.clientY
-    console.log('flehhh', coordinates );
-
-  }
 
 	render() {
-		const statusPay = ['unpayd-border', 'payd-border']
-		const cName = ' ' + statusPay[this.props.status_pay]
+		const statusRejected = ['', '', 'decline-payment']
+		const bName = statusRejected[this.props.status_pay]
+		const status = ['unpayd', 'payd', 'unpayd']
+		const cName = ' ' + status[this.props.status_pay]
 		return (
 			<div className="modal__container">
-					<div className="orders__info" onClick={(event) => { this.toggle(); this.getMousePos(event);}} />
+				<div className={"orders__info " + cName} onClick={this.toggle} />
 				{this.state.modal &&
-					<div className="modal">
-            <div className="modal__exit" onClick={this.toggle}></div>
+					<ReactCSSTransitionGroup
+						transitionName="bounce"
+						transitionAppear={true}
+						transitionAppearTimeout={1000}
+						transitionEnter={false}
+						transitionLeave={true}
+						transitionLeaveTimeout={1000}
+						className={'modal ' + bName}
+						component="div"
+					>
+						<div className="modal__exit" onClick={this.toggle} />
 						<div
-							className={'orders__edit modal__button' + cName}
-							onClick={this.toggleEdit}
-						>
-							Breyta
-						</div>
-						<div
-							className={'orders__delete modal__button' + cName}
-							onClick={this.toggleDelete}
-						>
-							Eyða
-						</div>
-					</div>}
-				{this.state.delete &&
-          <div className="modal">
-					<div className="modal__delete">
-						<div
-							className="modal__button button-delete"
+							className={'modal__button'}
 							onClick={this.firebaseDelete.bind(this)}
 						>
-							Já
+							Eyða Pöntun
 						</div>
-            <div
-							className="modal__button button-delete"
-							onClick={this.toggle}
-						>
-							Nei
-						</div>
-					</div>
-        </div>
-      }
-      {this.state.edit &&
-        <div className="modal">
-          hello
-        </div>
-      }
+					</ReactCSSTransitionGroup>
+				}
 			</div>
 		)
 	}
