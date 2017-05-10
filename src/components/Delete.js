@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import firebase from './firebase'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+
 class Delete extends Component {
 	constructor(props) {
 		super(props)
@@ -39,7 +40,7 @@ class Delete extends Component {
 		const cName = ' ' + status[this.props.status_pay]
 		return (
 			<div className="modal__container">
-				<div className={"orders__info " + cName} onClick={this.toggle} />
+				<div className={'orders__info ' + cName} onClick={this.toggle} />
 				{this.state.modal &&
 					<ReactCSSTransitionGroup
 						transitionName="bounce"
@@ -58,8 +59,7 @@ class Delete extends Component {
 						>
 							Eyða Pöntun
 						</div>
-					</ReactCSSTransitionGroup>
-				}
+					</ReactCSSTransitionGroup>}
 			</div>
 		)
 	}

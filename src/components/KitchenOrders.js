@@ -45,6 +45,7 @@ class KitchenOrders extends Component {
 							drinks.push(item)
 						}
 					}
+
 					if (drinks.length > 0) {
 						return {
 							timeStamp: item.createdAt,
@@ -70,6 +71,7 @@ class KitchenOrders extends Component {
 				})
 			}
 		})
+
 		const user_orders = orderMap.map(item => {
 			if (item) {
 				const items = item.filter(i => typeof i !== 'undefined')
@@ -77,6 +79,7 @@ class KitchenOrders extends Component {
 			}
 			return item
 		})
+
 		let all_waiters = []
 		user_orders.forEach(orders => {
 			if (orders) {
@@ -85,9 +88,11 @@ class KitchenOrders extends Component {
 				})
 			}
 		})
+
 		all_waiters.sort((a, b) => {
 			return a.timeStamp - b.timeStamp
 		})
+
 		all_waiters = all_waiters.map(waiter => waiter.waiter)
 		return all_waiters
 	}
@@ -98,21 +103,21 @@ class KitchenOrders extends Component {
 		}
 		return (
 			<div className="gag">
-					<div className="orders">
-						<ReactCSSTransitionGroup
-							transitionName="bounce"
-							transitionAppear={false}
-							transitionAppearTimeout={700}
-							transitionEnter={false}
-							transitionEnterTimeout={700}
-							transitionLeave={true}
-							transitionLeaveTimeout={700}
-							className="orders__list"
-							component="ul"
-						>
-							{this.renderOrder()}
-						</ReactCSSTransitionGroup>
-					</div>
+				<div className="orders">
+					<ReactCSSTransitionGroup
+						transitionName="bounce"
+						transitionAppear={false}
+						transitionAppearTimeout={700}
+						transitionEnter={false}
+						transitionEnterTimeout={700}
+						transitionLeave={true}
+						transitionLeaveTimeout={700}
+						className="orders__list"
+						component="ul"
+					>
+						{this.renderOrder()}
+					</ReactCSSTransitionGroup>
+				</div>
 			</div>
 		)
 	}
