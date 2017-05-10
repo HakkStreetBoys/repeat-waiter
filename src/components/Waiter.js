@@ -16,10 +16,8 @@ const Waiter = ({
 	key3,
 	button_type,
 }) => {
-	const { table_number, status_item, status_pay, quantity } = theOrder[0]
-	const status = ['unpayd', 'payd', 'unpayd']
+	const { table_number, status_item, status_pay } = theOrder[0]
 	const statusRejected = ['', '', 'Greiðslu hafnað!']
-	const cName = ' ' + status[status_pay]
 	const bName = statusRejected[status_pay]
 	let totalPrice = 0
 	const allTitle = theOrder.map((oneOrder, index) => {

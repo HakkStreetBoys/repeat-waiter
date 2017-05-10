@@ -8,7 +8,12 @@ const Header = () => {
 				<div className="nav__list-container">
 					<ul className="nav__list">
 						<li>
-							<NavLink to="/" className="WaiterLink" activeClassName="active" onlyActiveOnIndex>
+							<NavLink
+								to="/"
+								className="WaiterLink"
+								activeClassName="active"
+								onlyActiveOnIndex
+							>
 								<div className="nav__waiter" />
 								Drykkir
 							</NavLink>
