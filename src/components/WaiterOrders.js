@@ -27,15 +27,11 @@ class WaiterOrders extends Component {
 
 	renderOrder = () => {
 		const { myOrders } = this.state
-		// console.log("what is myOrders", myOrders);
 		const orders = []
-		const numbers = []
 		let drinks = []
 		const orderMap = _.map(myOrders, (number, i2) => {
 			const user = number
 			const confirmedOrders = user ? user.confirmed_order : undefined
-			// console.log("confirmedOrders", confirmedOrders);
-			// console.log('i2 ',i2);
 			if (confirmedOrders) {
 				return _.map(confirmedOrders, (order, i) => {
 					drinks = []

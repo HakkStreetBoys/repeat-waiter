@@ -99,7 +99,7 @@ class TableOrders extends Component {
 			<div className="gag">
 					<div className="orders">
 						<ReactCSSTransitionGroup
-							transitionName="example"
+							transitionName="bounce"
 							transitionAppear={false}
 							transitionAppearTimeout={700}
 							transitionEnter={false}

@@ -18,8 +18,10 @@ class Button extends Component {
 		let temp = this.props.status_item
 		if (temp < 2) {
 			temp = temp % 2 + 1
+		} else {
+			temp = 0
 		}
-
+		if(this.props.button_type) {
 		for (let keyStatus in this.props.key3) {
 			firebase
 			.database()
@@ -48,8 +50,26 @@ class Button extends Component {
 			}
 			})
 	}
+} else {
+	for (let keyStatus in this.props.key3) {
+		firebase
+			.database()
+			.ref(
+				'users/' +
+					this.props.key2 +
+					'/confirmed_order/' +
+					this.props.key1 +
+					'/' +
+					this.props.key3[keyStatus]
+			)
+			.update({
+						status_item: temp,
+					})
+	}
+
 }
 
+}
 }
 
 export default Button
