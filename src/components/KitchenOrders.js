@@ -16,7 +16,6 @@ class KitchenOrders extends Component {
 
 	componentWillMount() {
 		firebase.database().ref('users').on('value', snapshot => {
-			console.log(snapshot.val())
 			this.setState({ myOrders: snapshot.val(), loading: false })
 		})
 	}
