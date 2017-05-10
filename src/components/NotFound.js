@@ -6,6 +6,7 @@ const NotFound = () => {
     <div className="not_found">
       <div className="not-found__container">
         <h1>Ooooops!</h1>
+        <img src={process.env.PUBLIC_URL + "../img/source.gif"} alt='' />
         <span className="not_found_emoji">😱😱😱</span>
         <p>Við finnum ekki síðuna sem þú ert að leita af.</p>
         <p>Ýttu á takkan til að komast aftur í þjónakerfið</p>
